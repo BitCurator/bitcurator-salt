@@ -1,0 +1,1 @@
+# bitcurator-salt
