@@ -1,0 +1,40 @@
+[Desktop Entry]
+Name=Brasero
+GenericName=Disc Burner and Copier
+Comment=Create and copy CDs and DVDs
+Keywords=disc;cdrom;dvd;burn;audio;video;
+Categories=GTK;GNOME;AudioVideo;Audio;Video;DiscBurning;Imaging and Recovery;
+MimeType=application/x-cd-image;application/x-cdrdao-toc;application/x-cue;application/x-toc;audio/x-scpls;audio/x-ms-asx;audio/x-mp3-playlist;audio/x-mpegurl;application/x-brasero;x-content/audio-cdda;x-content/video-dvd;x-content/video-vcd;x-content/video-svcd;x-content/image-picturecd;
+Exec=brasero %U
+Icon=brasero
+StartupNotify=true
+Terminal=false
+Type=Application
+X-GNOME-FullName=Brasero Disc Burner
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=brasero
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.12.1
+X-GNOME-UsesNotifications=true
+Actions=Window;Image;Disc;Audio;Video;
+X-Ubuntu-Gettext-Domain=brasero
+
+[Desktop Action Window]
+Name=Open a New Window
+Exec=brasero --no-existing-session
+
+[Desktop Action Image]
+Name=Burn an Image File
+Exec=brasero --image
+
+[Desktop Action Disc]
+Name=Copy a Disc
+Exec=brasero --copy
+
+[Desktop Action Audio]
+Name=Create an Audio Project
+Exec=brasero --audio
+
+[Desktop Action Video]
+Name=Create a Video Project
+Exec=brasero --video

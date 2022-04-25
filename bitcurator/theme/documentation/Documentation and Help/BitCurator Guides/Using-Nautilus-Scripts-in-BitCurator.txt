@@ -1,0 +1,10 @@
+The BitCurator environment includes a set of custom scripts to assist with 
+simple data analysis and triage tasks when navigating files on the Desktop.
+These scripts can be executed by right-clicking on any regular file, selecting
+"Scripts" from the context menu, and navigating to the submenu associated
+with the desired script.
+
+For more information, see the documentation at:
+
+https://confluence.educopia.org/display/BC/Using+Nautilus+for+Data+Triage
+

@@ -1,0 +1,2 @@
+grsync:
+  pkg.installed

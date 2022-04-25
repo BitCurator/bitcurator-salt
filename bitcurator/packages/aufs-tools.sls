@@ -1,0 +1,2 @@
+aufs-tools:
+  pkg.installed

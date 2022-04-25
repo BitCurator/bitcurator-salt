@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=hashdbUsersManual.pdf
+Exec=evince "Documentation and Help/bulk_extractor and BEViewer/hashdbUsersManual.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

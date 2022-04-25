@@ -1,0 +1,2 @@
+synaptic:
+  pkg.installed

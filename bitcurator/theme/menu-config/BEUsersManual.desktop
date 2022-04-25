@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=BEUsersManual.pdf
+Exec=evince "Documentation and Help/bulk_extractor and BEViewer/BEUsersManual.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

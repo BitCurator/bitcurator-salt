@@ -1,0 +1,2 @@
+clamtk:
+  pkg.installed

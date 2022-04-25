@@ -1,0 +1,2 @@
+gadmin-rsync:
+  pkg.installed

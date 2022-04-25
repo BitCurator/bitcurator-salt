@@ -1,0 +1,2 @@
+bchunk:
+  pkg.installed

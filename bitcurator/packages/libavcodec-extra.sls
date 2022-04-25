@@ -1,0 +1,2 @@
+libavcodec-extra:
+  pkg.installed

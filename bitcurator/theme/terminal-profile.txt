@@ -1,0 +1,6 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(52,100,162)'
+bold-is-bright=true
+palette=['rgb(46,52,54)', 'rgb(87,192,9)', 'rgb(90,179,6)', 'rgb(196,160,0)', 'rgb(52,100,162)', 'rgb(117,80,123)', 'rgb(111,12,8)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(34,29,124)', 'rgb(243,95,9)', 'rgb(252,233,79)', 'rgb(14,44,174)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+use-theme-colors=false
+visible-name='bitcurator'

@@ -1,0 +1,2 @@
+mysql-client:
+  pkg.installed

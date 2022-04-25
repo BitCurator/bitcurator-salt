@@ -1,0 +1,2 @@
+libtalloc-dev:
+  pkg.installed

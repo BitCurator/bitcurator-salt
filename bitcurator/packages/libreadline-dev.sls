@@ -1,0 +1,2 @@
+libreadline-dev:
+  pkg.installed

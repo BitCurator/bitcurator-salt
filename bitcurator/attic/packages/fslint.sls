@@ -1,0 +1,2 @@
+fslint:
+  pkg.installed

@@ -1,0 +1,12 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN" 
+"http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd"> 
+<Menu> 
+  <Name>Applications</Name> 
+  <Menu> 
+    <Name>Forensics and Reporting</Name> 
+    <Directory>Forensics-Reporting.directory</Directory> 
+    <Include> 
+        <Category>Forensics and Reporting</Category> 
+    </Include> 
+  </Menu> <!-- End Forensics and Reporting --> 
+</Menu> 

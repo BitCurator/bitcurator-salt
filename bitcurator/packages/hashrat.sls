@@ -1,0 +1,2 @@
+hashrat:
+  pkg.installed

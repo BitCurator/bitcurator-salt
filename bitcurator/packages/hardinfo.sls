@@ -1,0 +1,2 @@
+hardinfo:
+  pkg.installed

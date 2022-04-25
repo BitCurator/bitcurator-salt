@@ -1,0 +1,2 @@
+python-vte:
+  pkg.installed

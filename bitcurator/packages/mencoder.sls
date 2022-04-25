@@ -1,0 +1,2 @@
+mencoder:
+  pkg.installed

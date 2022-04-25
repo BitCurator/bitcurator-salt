@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=bitcurator-theme
+Comment=Bash script to apply bitcurator theme on start
+Exec=/usr/share/bitcurator/bitcurator-theme.sh
+Icon=/usr/share/bitcurator/resources/images/bbinstall.png
+Categories=System;

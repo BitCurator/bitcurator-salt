@@ -1,0 +1,2 @@
+libexif-dev:
+  pkg.installed

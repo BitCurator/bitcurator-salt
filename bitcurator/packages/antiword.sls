@@ -1,0 +1,2 @@
+antiword:
+  pkg.installed

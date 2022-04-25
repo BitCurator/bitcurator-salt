@@ -1,0 +1,2 @@
+hfsutils:
+  pkg.installed

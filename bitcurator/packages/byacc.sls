@@ -1,0 +1,2 @@
+byacc:
+  pkg.installed

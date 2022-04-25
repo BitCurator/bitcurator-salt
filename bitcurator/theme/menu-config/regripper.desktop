@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=RegRipper
+GenericName=ForensicTool
+Comment=RegRipper command-line tool
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-regripper.sh
+Categories=Forensics and Reporting

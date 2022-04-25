@@ -1,0 +1,2 @@
+expat:
+  pkg.installed

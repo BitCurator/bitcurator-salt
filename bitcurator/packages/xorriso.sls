@@ -1,0 +1,2 @@
+xorriso:
+  pkg.installed

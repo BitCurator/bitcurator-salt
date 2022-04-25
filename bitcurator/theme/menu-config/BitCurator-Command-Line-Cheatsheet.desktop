@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=BitCurator-Command-Line-Cheatsheet.pdf
+Exec=evince "Documentation and Help/BitCurator Guides/BitCurator-Command-Line-Cheatsheet.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

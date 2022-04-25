@@ -1,0 +1,2 @@
+fdutils:
+  pkg.installed

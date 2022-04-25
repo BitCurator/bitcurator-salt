@@ -1,0 +1,2 @@
+libnss-myhostname:
+  pkg.installed
