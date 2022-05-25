@@ -41,13 +41,13 @@ TO BE ADDED HERE
 
 You can generate the hash of your downloaded file with the following command:
 
-```
+```shell
 sha256sum bitcurator-cli
 ```
 
 Next, adjust some permissions and move the BitCurator installer to the correct location:
 
-```
+```shell
 mv bitcurator-cli bitcurator
 chmod +x bitcurator
 sudo mv bitcurator /usr/local/bin
@@ -55,13 +55,13 @@ sudo mv bitcurator /usr/local/bin
 
 GnuPG is required for the BitCurator installer to validate the signature of the BitCurrator configuration files during install. To install GnuPG, run:
 
-``
+```shell
 sudo apt install -y gnupg
 ```
 
 Next, run the BitCurator installer. This may take an hour or longer to complete, depending on your system:
 
-```
+```shell
 sudo bitcurator install
 ```
 
