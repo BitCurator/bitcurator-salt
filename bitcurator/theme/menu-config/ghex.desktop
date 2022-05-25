@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GHex
+GenericName=Hex Editor
+Comment=Inspect and edit binary files
+Exec=ghex %F
+Terminal=false
+Type=Application
+Icon=ghex
+Categories=Additional Tools
+StartupNotify=true
+X-Ubuntu-Gettext-Domain=ghex-3.0

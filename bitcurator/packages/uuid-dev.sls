@@ -1,0 +1,2 @@
+uuid-dev:
+  pkg.installed

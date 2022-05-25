@@ -1,0 +1,2 @@
+plymouth-themes:
+  pkg.installed

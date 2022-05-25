@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=1.2.3
+Name=dcfldd (command line)
+GenericName=ImagingTool
+Comment=dcfldd command-line tool
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-dcfldd.sh
+Categories=Imaging and Recovery

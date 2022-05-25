@@ -1,0 +1,2 @@
+python-pyside:
+  pkg.installed

@@ -1,0 +1,2 @@
+libtre-dev:
+  pkg.installed

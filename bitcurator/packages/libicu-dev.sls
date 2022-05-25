@@ -1,0 +1,2 @@
+libicu-dev:
+  pkg.installed

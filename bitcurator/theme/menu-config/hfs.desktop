@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=HFS Explorer
+GenericName=HFS Explorer
+Comment=Explore HFS
+Exec=/usr/share/hfsexplorer/bin/./hfsexplorer %F
+Terminal=false
+Type=Application
+Icon=/usr/share/icons/Humanity/apps/128/grip.svg
+Categories=Additional Tools

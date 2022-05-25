@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=sdhash-tutorial.pdf
+Exec=evince "Documentation and Help/SDHash Tutorial/sdhash-tutorial.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

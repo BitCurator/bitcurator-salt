@@ -1,0 +1,2 @@
+pst-utils:
+  pkg.installed

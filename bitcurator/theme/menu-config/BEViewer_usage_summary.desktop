@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=BEViewer_usage_summary.pdf
+Exec=evince "Documentation and Help/bulk_extractor and BEViewer/BEViewer_usage_summary.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Using-Nautilus-Scripts-in-BitCurator.txt
+Exec=gedit "Documentation and Help/BitCurator Guides/Using-Nautilus-Scripts-in-BitCurator.txt"
+Icon=text-plain
+Categories=Documentation and Help

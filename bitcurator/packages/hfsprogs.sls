@@ -1,0 +1,2 @@
+hfsprogs:
+  pkg.installed

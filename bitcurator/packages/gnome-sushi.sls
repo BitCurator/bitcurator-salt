@@ -1,0 +1,2 @@
+gnome-sushi:
+  pkg.installed

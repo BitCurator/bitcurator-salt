@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/launcher-trust.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=BitCurator Desktop Launcher Trust Enabler
+Name=BitCurator Desktop Launcher Trust Enabler
+Comment[en_US]=Workaround for launcher trust
+Comment=Workaround for launcher trust

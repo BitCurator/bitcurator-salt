@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=DFXML Tag Library v3.xlsx
+Exec=libreoffice "Documentation and Help/DFXML Guides/DFXML tag library v3.xlsx"
+Icon=libreoffice-calc
+Categories=Documentation and Help

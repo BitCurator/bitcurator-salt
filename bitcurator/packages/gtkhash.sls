@@ -1,0 +1,2 @@
+gtkhash:
+  pkg.installed

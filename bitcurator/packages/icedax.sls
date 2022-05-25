@@ -1,0 +1,2 @@
+icedax:
+  pkg.installed

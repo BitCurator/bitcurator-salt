@@ -1,0 +1,2 @@
+zerofree:
+  pkg.installed

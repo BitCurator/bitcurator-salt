@@ -1,0 +1,2 @@
+libudev-dev:
+  pkg.installed

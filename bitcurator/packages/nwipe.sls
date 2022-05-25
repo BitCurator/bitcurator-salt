@@ -1,0 +1,2 @@
+nwipe:
+  pkg.installed

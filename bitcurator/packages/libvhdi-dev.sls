@@ -1,0 +1,2 @@
+libvhdi-dev:
+  pkg.installed

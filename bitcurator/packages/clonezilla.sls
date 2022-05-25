@@ -1,0 +1,2 @@
+clonezilla:
+  pkg.installed

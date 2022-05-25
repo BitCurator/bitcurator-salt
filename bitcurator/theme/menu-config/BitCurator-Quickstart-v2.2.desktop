@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=BitCurator-Quickstart-v2.2.pdf
+Exec=evince "Documentation and Help/BitCurator Guides/BitCurator-Quickstart-v2.2.pdf"
+Icon=application-pdf
+Categories=Documentation and Help

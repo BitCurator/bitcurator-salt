@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=0.1.7
+Name=BitCurator Reports (command line)
+GenericName=ForensicTool
+Comment=bitcurator reporting command-line tool
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-bcreport.sh
+Categories=Additional Tools

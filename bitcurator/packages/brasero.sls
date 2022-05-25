@@ -1,0 +1,2 @@
+brasero:
+  pkg.installed

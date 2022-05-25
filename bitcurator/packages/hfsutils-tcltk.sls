@@ -1,0 +1,2 @@
+hfsutils-tcltk:
+  pkg.installed

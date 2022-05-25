@@ -1,0 +1,2 @@
+libvte-common:
+  pkg.installed

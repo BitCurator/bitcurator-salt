@@ -1,0 +1,2 @@
+yad:
+  pkg.installed

@@ -1,0 +1,2 @@
+hfsplus:
+  pkg.installed

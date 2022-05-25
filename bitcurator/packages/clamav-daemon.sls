@@ -1,0 +1,2 @@
+clamav-daemon:
+  pkg.installed

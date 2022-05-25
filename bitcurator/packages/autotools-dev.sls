@@ -1,0 +1,2 @@
+autotools-dev:
+  pkg.installed

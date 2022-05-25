@@ -1,0 +1,2 @@
+python-appindicator:
+  pkg.installed

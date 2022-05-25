@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=1.8.12
+Name=Hashrat
+GenericName=ForensicTool
+Comment=Hashing tool for directories and files
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-hashrat.sh
+Categories=Additional Tools

@@ -1,0 +1,2 @@
+hashdeep:
+  pkg.installed
