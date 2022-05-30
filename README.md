@@ -36,7 +36,7 @@ wget https://distro.ibiblio.org/bitcurator/bitcurator-cli
 Check that the SHA-256 hash of this file matches the following value:
 
 ```shell
-TO BE ADDED HERE
+83065b1dc1469a6584c44b199ff9773826d168a5ff82b0d22769db01a232296d
 ```
 
 You can generate the hash of your downloaded file with the following command:
