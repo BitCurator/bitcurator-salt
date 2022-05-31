@@ -1,4 +1,5 @@
 include:
+  - bitcurator.python-packages.pip
   - bitcurator.python-packages.analyzemft
   - bitcurator.python-packages.argparse
   - bitcurator.python-packages.bagit
@@ -24,11 +25,13 @@ include:
   - bitcurator.python-packages.six
   - bitcurator.python-packages.unicodecsv
   - bitcurator.python-packages.wheel
+  - bitcurator.python-packages.jinja2
 
 bitcurator-python-packages:
   test.nop:
     - name: bitcurator-python-packages
     - require:
+      - sls: bitcurator.python-packages.pip
       - sls: bitcurator.python-packages.analyzemft
       - sls: bitcurator.python-packages.argparse
       - sls: bitcurator.python-packages.bagit
@@ -54,3 +57,4 @@ bitcurator-python-packages:
       - sls: bitcurator.python-packages.six
       - sls: bitcurator.python-packages.unicodecsv
       - sls: bitcurator.python-packages.wheel
+      - sls: bitcurator.python-packages.jinja2
