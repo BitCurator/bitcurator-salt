@@ -18,7 +18,7 @@ Install Ubuntu 20.04LTS in a VM or on a dedicated host (see https://ubuntu.com/t
 
 BitCurator uses a standalone command-line tool for installation and upgrade. Follow the steps below to download and run it.
 
-Log in, ensure you are connected to a network, and execute the following in a terminalto ensure everything is up to date:
+Log in, ensure you are connected to a network, and execute the following in a terminal to ensure everything is up to date:
 
 ```shell
 sudo apt-get update
