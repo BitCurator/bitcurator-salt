@@ -10,46 +10,50 @@ This repo includes the SaltStack states and supporting files to install the data
 
 Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to download pre-built VMs for specific releases.
 
-## Pre-Installation Setup
+**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, it is not possible to deploy it on systems with ARM processors (including Apple M1).**
 
-Install Ubuntu 20.04LTS in a VM or on a dedicated host (see https://ubuntu.com/tutorials/tutorial-install-ubuntu-desktop for help with this). Our pre-built VMs use the hostname **bitcurator**, the username **bcadmin**, and the default password **bcadmin**. 
+If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below.
 
-## Install
+## Install Ubuntu 20.04LTS
 
-BitCurator uses a standalone command-line tool for installation and upgrade. Follow the steps below to download and run it.
+Download the 64-bit Ubuntu 20.04 desktop image from https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso and install on your local machine or in a VM. If you're using a VM, we recommend allocating at least 4GB of RAM and 64GB of disk space to the instance.
 
-Log in, ensure you are connected to a network, and execute the following in a terminal to ensure everything is up to date:
+To remain consistent with the default configuration of BitCurator, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password.
+
+When installation is completed, reboot, log in, and open a terminal.
+
+
+## Using the Installer
+
+**1. Download the BitCurator CLI installer**
+
+BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
 ```shell
-sudo apt-get update
-sudo apt-get dist-upgrade
+wget https://distro.ibiblio.org/bitcurator/bitcurator-cli-linux
 ```
 
-Next, download the installer tool:
+Verify that the SHA-256 has of the downloaded file matches the value below:
 
 ```shell
-wget https://distro.ibiblio.org/bitcurator/bitcurator-cli
+377065fd9880e511c3c5db7306c5b40dd507ba491a89452cf05f2b570946c5c0
 ```
 
-Check that the SHA-256 hash of this file matches the following value:
+You can generate the hash of your downloaded file with:
 
 ```shell
-83065b1dc1469a6584c44b199ff9773826d168a5ff82b0d22769db01a232296d
-```
-
-You can generate the hash of your downloaded file with the following command:
-
-```shell
-sha256sum bitcurator-cli
+sha256sum bitcurator-cli-linux
 ```
 
 Next, adjust some permissions and move the BitCurator installer to the correct location:
 
 ```shell
-mv bitcurator-cli bitcurator
+mv bitcurator-cli-linux bitcurator
 chmod +x bitcurator
 sudo mv bitcurator /usr/local/bin
 ```
+
+**2. Install GnuPG**
 
 GnuPG is required for the BitCurator installer to validate the signature of the BitCurrator configuration files during install. To install GnuPG, run:
 
@@ -57,13 +61,32 @@ GnuPG is required for the BitCurator installer to validate the signature of the 
 sudo apt install -y gnupg
 ```
 
+**3. Run the BitCurator CLI Installer**
+
 Next, run the BitCurator installer. This may take an hour or longer to complete, depending on your system:
 
 ```shell
 sudo bitcurator install
 ```
 
-Finally, reboot the system and log in.
+The installation may take up to an hour, depending on the speed of your system.
+
+If you encounter an error, you may be able to identify the issue by reviewing saltstack.log file under /var/cache/bitcurator/cli in the subdirectory that matches the BitCcurator state-files version you're installing. Search for the log file for result: false messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
+
+```shell
+grep -i -C 5 'result: false' or grep -i -B 8 'result: false'
+```
+
+**5. Reboot**
+
+When the installation is complete, reboot your system from the terminal:
+
+```shell
+sudo reboot
+```
+
+After the reboot, you will be automatically logged in to BitCurator.
+
 
 ## What's in this repository
 
