@@ -6,15 +6,13 @@
 [![GitHub forks](https://img.shields.io/github/forks/bitcurator/bitcurator-salt.svg)](https://github.com/bitcurator/bitcurator-salt/network)
 [![Twitter Follow](https://img.shields.io/twitter/follow/bitcurator.svg?style=social&label=Follow)](https://twitter.com/bitcurator)
 
-**NOTE: Work on this updated repository and the related installer is in progress.**
-
 This repo includes the SaltStack states and supporting files to install the data analysis, forensics, security tools, and environment modifications that form the BitCurator environment. See details below for how to deploy in a recent Ubuntu LTS release.
 
 Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to download pre-built VMs for specific releases.
 
 ## Pre-Installation Setup
 
-Install Ubuntu 20.04LTS or 22.04LTS environment in a VM or on a dedicated host (see https://ubuntu.com/tutorials/tutorial-install-ubuntu-desktop for help with this). Our pre-built VMs use the hostname **bitcurator**, the username **bcadmin**, and the default password **bcadmin**. 
+Install Ubuntu 20.04LTS in a VM or on a dedicated host (see https://ubuntu.com/tutorials/tutorial-install-ubuntu-desktop for help with this). Our pre-built VMs use the hostname **bitcurator**, the username **bcadmin**, and the default password **bcadmin**. 
 
 ## Install
 
