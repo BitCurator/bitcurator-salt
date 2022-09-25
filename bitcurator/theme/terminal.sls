@@ -8,6 +8,7 @@
 include:
   - bitcurator.config.user.user
   - bitcurator.theme.xhost
+  - bitcurator.packages.dbus-x11
 
 bitcurator-theme-terminal-profile-file:
   file.managed:
@@ -27,6 +28,7 @@ bitcurator-dbus-address:
     - require:
       - user: bitcurator-user-{{ user }}
       - sls: bitcurator.theme.xhost
+      - sls: bitcurator.packages.dbus-x11
 
 bitcurator-theme-terminal-profile-install:
   cmd.run:

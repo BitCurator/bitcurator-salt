@@ -1,4 +1,8 @@
-{% set release = grains['oscodename'] %}
+{% if grains['oscodename'] != 'jammy' %}
+  {% set release = grains['oscodename'] %}
+{% else %}
+  {% set release = 'jammy' %}
+{% endif %}
 
 include:
   - bitcurator.packages.software-properties-common

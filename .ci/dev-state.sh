@@ -5,5 +5,5 @@ set -x
 DISTRO=${DISTRO:="focal"}
 STATE=$1
 
-docker run -it --rm --name="bitcurator-state-${DISTRO}" -v `pwd`/bitcurator:/srv/salt/bitcurator --cap-add SYS_ADMIN digitalsleuth/mat-salt-tester:${DISTRO} \
+docker run -it --rm --name="bitcurator-state-${DISTRO}" -v `pwd`/bitcurator:/srv/salt/bitcurator --cap-add SYS_ADMIN digitalsleuth/bitcurator-tester:${DISTRO} \
   /bin/bash
