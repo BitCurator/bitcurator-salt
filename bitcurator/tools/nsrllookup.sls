@@ -2,6 +2,10 @@ include:
   - bitcurator.packages.build-essential
   - bitcurator.packages.cmake
   - bitcurator.packages.libboost-dev
+  - bitcurator.packages.libboost-filesystem-dev
+  - bitcurator.packages.libboost-program-options-dev
+  - bitcurator.packages.libboost-system-dev
+  - bitcurator.packages.libboost-test-dev
 
 nsrllookup-source:
   file.managed:
@@ -30,6 +34,10 @@ nsrllookup-build:
       - sls: bitcurator.packages.build-essential
       - sls: bitcurator.packages.cmake
       - sls: bitcurator.packages.libboost-dev
+      - sls: bitcurator.packages.libboost-filesystem-dev
+      - sls: bitcurator.packages.libboost-program-options-dev
+      - sls: bitcurator.packages.libboost-system-dev
+      - sls: bitcurator.packages.libboost-test-dev
     - unless: test -x /usr/local/bin/nsrllookup
 
 nsrllookup-cleanup:
