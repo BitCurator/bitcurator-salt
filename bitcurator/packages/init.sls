@@ -25,6 +25,7 @@ include:
   - bitcurator.packages.dkms
   - bitcurator.packages.docker
   - bitcurator.packages.equivs
+  - bitcurator.packages.ewf-tools
   - bitcurator.packages.expat
   - bitcurator.packages.expect
   - bitcurator.packages.fdutils
@@ -176,6 +177,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.dkms
       - sls: bitcurator.packages.docker
       - sls: bitcurator.packages.equivs
+      - sls: bitcurator.packages.ewf-tools
       - sls: bitcurator.packages.expat
       - sls: bitcurator.packages.expect
       - sls: bitcurator.packages.fdutils
