@@ -12,7 +12,7 @@ include:
 guymager-deb:
   pkg.installed:
     - sources:
-      - guymager-beta: salt://bitcurator/files/guymager-beta_0.8.12-1_amd64.deb
+      - guymager-beta: salt://bitcurator/files/guymager-beta_0.8.13-1_amd64.deb
     - require:
       - sls: bitcurator.packages.libqt5
       - sls: bitcurator.packages.hdparm
