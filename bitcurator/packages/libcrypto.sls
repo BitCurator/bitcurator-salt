@@ -1,11 +1,11 @@
 {% if grains['oscodename'] == 'jammy' %}
 
-gadmin-rsync-not-in-jammy:
-  test.nop
+libcrypto++8:
+  pkg.installed
 
 {% else %}
 
-gadmin-rsync:
+libcrypto++6:
   pkg.installed
 
 {% endif %}

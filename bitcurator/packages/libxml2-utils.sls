@@ -1,2 +1,2 @@
-libewf2:
+libxml2-utils:
   pkg.installed

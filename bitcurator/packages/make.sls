@@ -1,2 +1,2 @@
-libewf2:
+make:
   pkg.installed

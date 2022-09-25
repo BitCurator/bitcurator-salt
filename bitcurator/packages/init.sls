@@ -16,6 +16,7 @@ include:
   - bitcurator.packages.clonezilla
   - bitcurator.packages.cmake
   - bitcurator.packages.curl
+  - bitcurator.packages.dbus-x11
   - bitcurator.packages.dcfldd
   - bitcurator.packages.dconf
   - bitcurator.packages.dialog
@@ -60,7 +61,7 @@ include:
   - bitcurator.packages.libbz2-dev
   - bitcurator.packages.libcppunit
   - bitcurator.packages.libcppunit-dev
-  - bitcurator.packages.libcrypto++6
+  - bitcurator.packages.libcrypto
   - bitcurator.packages.libcurl4-openssl-dev
   - bitcurator.packages.libdvdread
   - bitcurator.packages.libevent-dev
@@ -71,7 +72,6 @@ include:
   - bitcurator.packages.libicu-dev
   - bitcurator.packages.libimage-exiftool-perl
   - bitcurator.packages.libjpeg-dev
-  - bitcurator.packages.liblightgrep
   - bitcurator.packages.libmad0
   - bitcurator.packages.libmagic-dev
   - bitcurator.packages.libmysqlclient-dev
@@ -97,6 +97,7 @@ include:
   - bitcurator.packages.libvte-common
   - bitcurator.packages.libvte9
   - bitcurator.packages.libxml2-dev
+  - bitcurator.packages.libxml2-utils
   - bitcurator.packages.libxslt1-dev
   - bitcurator.packages.linux-headers-generic
   - bitcurator.packages.mediainfo
@@ -166,6 +167,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.clonezilla
       - sls: bitcurator.packages.cmake
       - sls: bitcurator.packages.curl
+      - sls: bitcurator.packages.dbus-x11
       - sls: bitcurator.packages.dcfldd
       - sls: bitcurator.packages.dconf
       - sls: bitcurator.packages.dialog
@@ -210,7 +212,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libbz2-dev
       - sls: bitcurator.packages.libcppunit
       - sls: bitcurator.packages.libcppunit-dev
-      - sls: bitcurator.packages.libcrypto++6
+      - sls: bitcurator.packages.libcrypto
       - sls: bitcurator.packages.libcurl4-openssl-dev
       - sls: bitcurator.packages.libdvdread
       - sls: bitcurator.packages.libevent-dev
@@ -221,7 +223,6 @@ bitcurator-packages:
       - sls: bitcurator.packages.libicu-dev
       - sls: bitcurator.packages.libimage-exiftool-perl
       - sls: bitcurator.packages.libjpeg-dev
-      - sls: bitcurator.packages.liblightgrep
       - sls: bitcurator.packages.libmad0
       - sls: bitcurator.packages.libmagic-dev
       - sls: bitcurator.packages.libmysqlclient-dev
@@ -247,6 +248,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libvte-common
       - sls: bitcurator.packages.libvte9
       - sls: bitcurator.packages.libxml2-dev
+      - sls: bitcurator.packages.libxml2-utils
       - sls: bitcurator.packages.libxslt1-dev
       - sls: bitcurator.packages.linux-headers-generic
       - sls: bitcurator.packages.mediainfo

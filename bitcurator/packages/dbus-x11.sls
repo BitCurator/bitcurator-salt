@@ -1,2 +1,2 @@
-libewf2:
+dbus-x11:
   pkg.installed
