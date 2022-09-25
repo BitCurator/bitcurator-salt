@@ -8,11 +8,11 @@
 
 This repo includes the SaltStack states and supporting files to install the data analysis, forensics, security tools, and environment modifications that form the BitCurator environment. See details below for how to deploy in a recent Ubuntu LTS release.
 
-Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to download pre-built VMs for specific releases.
+Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quick Start Guide. Pre-configured VMs are also available for some current and past releases.
 
 **Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, it is not possible to deploy it on systems with ARM processors (including Apple M1).**
 
-If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below.
+If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
 ## Install Ubuntu (22.04LTS or 20.04LTS)
 
@@ -63,7 +63,7 @@ sudo apt install -y gnupg
 
 **3. Run the BitCurator CLI Installer**
 
-Next, run the BitCurator installer. This may take an hour or longer to complete, depending on your system:
+Next, run the BitCurator installer. This may take up to an hour to complete, depending on your internet speed and system:
 
 ```shell
 sudo bitcurator install
