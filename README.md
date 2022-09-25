@@ -14,9 +14,9 @@ Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to download 
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below.
 
-## Install Ubuntu 20.04LTS
+## Install Ubuntu (22.04LTS or 20.04LTS)
 
-Download the 64-bit Ubuntu 20.04 desktop image from https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso and install on your local machine or in a VM. If you're using a VM, we recommend allocating at least 4GB of RAM and 64GB of disk space to the instance.
+Download the most recent 64-bit Ubuntu 22.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 4GB of RAM and 64GB of disk space to the instance. You may also use a release of Ubuntu 20.04LTS if needed.
 
 To remain consistent with the default configuration of BitCurator, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password.
 
@@ -33,10 +33,10 @@ BitCurator uses a standalone command-line tool for installation and upgrade. Fir
 wget https://distro.ibiblio.org/bitcurator/bitcurator-cli-linux
 ```
 
-Verify that the SHA-256 has of the downloaded file matches the value below:
+Verify that the SHA-256 has of the downloaded file (currently v1.0.0) matches the value below:
 
 ```shell
-377065fd9880e511c3c5db7306c5b40dd507ba491a89452cf05f2b570946c5c0
+5acab7abcafa24864d49e4872f8e2b562c16bf4842256ad3f994aae8d0df77c1
 ```
 
 You can generate the hash of your downloaded file with:
