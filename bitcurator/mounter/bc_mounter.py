@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import gi
+gi.require_version('Gtk', '3.0')
+
 from gi.repository import Gtk as gtk
 import subprocess
 import os, sys
@@ -19,7 +22,7 @@ class MounterDialog(gtk.Dialog):
         self.set_border_width(6)
         self.set_default_size(600, 400)
 
-        label = gtk.Label(dialog_message)
+        label = gtk.Label.new(dialog_message)
 
         # Get info about attached block devices
         blkid_cmd = "sudo blkid -o device | grep -v ram"
@@ -133,7 +136,7 @@ class MounterDialog(gtk.Dialog):
         cell6 = gtk.CellRendererText()
         column_dev = gtk.TreeViewColumn("Read/Write Status", cell6, text=6)
         treeview.append_column(column_dev)
-        
+
         mount_button = gtk.Button()
         mount_button.set_label("Mount Selected Devices")
         mount_button.connect('clicked', self.on_mount_clicked)

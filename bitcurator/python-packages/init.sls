@@ -15,6 +15,7 @@ include:
   - bitcurator.python-packages.matplotlib
   - bitcurator.python-packages.openpyxl
   - bitcurator.python-packages.opf-fido
+  - bitcurator.python-packages.path
   - bitcurator.python-packages.pefile
   - bitcurator.python-packages.pyicu
   - bitcurator.python-packages.python-dateutil
@@ -47,6 +48,7 @@ bitcurator-python-packages:
       - sls: bitcurator.python-packages.matplotlib
       - sls: bitcurator.python-packages.openpyxl
       - sls: bitcurator.python-packages.opf-fido
+      - sls: bitcurator.python-packages.path
       - sls: bitcurator.python-packages.pefile
       - sls: bitcurator.python-packages.pyicu
       - sls: bitcurator.python-packages.python-dateutil
