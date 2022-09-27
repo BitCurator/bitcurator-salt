@@ -8,7 +8,7 @@
 
 This repo includes the SaltStack states and supporting files to install the data analysis, forensics, security tools, and environment modifications that form the BitCurator environment. See details below for how to deploy in a recent Ubuntu LTS release.
 
-Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quick Start Guide. Pre-configured VMs are also available for some current and past releases.
+Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quickstart Guide. Pre-configured VMs are also available for some current and past releases.
 
 **Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, it is not possible to deploy it on systems with ARM processors (including Apple M1).**
 
@@ -109,8 +109,9 @@ The **bitcurator** directory contains all support files and salt states in a num
 
 ## BitCurator documentation, help, and other information
 
-User documentation and additional resources are available on
-[the BitCurator Environment wiki](https://confluence.educopia.org/display/BC).
+Quickstart Guides for BitCurator releases, installation notes, and other technical guidance can be found at https://github.com/BitCurator/bitcurator-distro/wiki/Releases.
+
+Additional user documentation and resources are available in the community maintained pages at [the BitCurator Environment wiki](https://confluence.educopia.org/display/BC).
 
 Questions and comments can also be directed to the bitcurator-users list.
 

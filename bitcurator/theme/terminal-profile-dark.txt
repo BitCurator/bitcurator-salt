@@ -1,0 +1,13 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(14,27,38)'
+bold-color-same-as-fg=true
+cursor-colors-set=false
+font='Noto Mono Bold 12'
+foreground-color='rgb(192,200,201)'
+highlight-colors-set=false
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=true
+use-transparent-background=false
+bold-is-bright=true
+visible-name='bitcurator'

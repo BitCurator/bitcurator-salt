@@ -1,2 +1,0 @@
-python-pyicu:
-  pkg.installed

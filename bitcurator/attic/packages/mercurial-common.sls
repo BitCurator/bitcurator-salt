@@ -1,2 +1,0 @@
-mercurial-common:
-  pkg.installed

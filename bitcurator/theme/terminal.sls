@@ -12,8 +12,8 @@ include:
 
 bitcurator-theme-terminal-profile-file:
   file.managed:
-    - name: /usr/share/bitcurator/resources/terminal-profile.txt
-    - source: salt://bitcurator/theme/terminal-profile.txt
+    - name: /usr/share/bitcurator/resources/terminal-profile-dark.txt
+    - source: salt://bitcurator/theme/terminal-profile-dark.txt
     - user: root
     - group: root
     - mode: 0644
@@ -32,7 +32,7 @@ bitcurator-dbus-address:
 
 bitcurator-theme-terminal-profile-install:
   cmd.run:
-    - name: dconf load /org/gnome/terminal/legacy/profiles:/ < /usr/share/bitcurator/resources/terminal-profile.txt
+    - name: dconf load /org/gnome/terminal/legacy/profiles:/ < /usr/share/bitcurator/resources/terminal-profile-dark.txt
     - runas: {{ user }}
     - cwd: {{ home }}
     - shell: /bin/bash

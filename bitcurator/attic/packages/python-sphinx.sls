@@ -1,2 +1,0 @@
-python-sphinx:
-  pkg.installed
