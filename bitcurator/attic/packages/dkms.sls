@@ -1,2 +1,0 @@
-dkms:
-  pkg.installed

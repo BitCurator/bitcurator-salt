@@ -1,2 +1,0 @@
-subversion:
-  pkg.installed

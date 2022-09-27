@@ -1,2 +1,0 @@
-cifs-utils:
-  pkg.installed

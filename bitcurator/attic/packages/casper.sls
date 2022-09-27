@@ -1,2 +1,0 @@
-casper:
-  pkg.installed

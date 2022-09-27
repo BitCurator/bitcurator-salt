@@ -1,2 +1,0 @@
-easytag:
-  pkg.installed
