@@ -26,3 +26,17 @@ bitcurator-theme-config-autostart:
     - require:
       - user: bitcurator-user-{{ user }}
       - file: bitcurator-theme-config
+
+bitcurator-theme-start-menu-backup:
+  file.copy:
+    - name: /usr/share/icons/Yaru/scalable/actions/view-app-grid-symbolic.svg.bak
+    - source: /usr/share/icons/Yaru/scalable/actions/view-app-grid-symbolic.svg
+    - force: True
+
+bitcurator-theme-start-menu-new:
+  file.copy:
+    - name: /usr/share/icons/Yaru/scalable/actions/view-app-grid-symbolic.svg
+    - source: /usr/share/icons/bitcurator/bcdisk.svg
+    - force: True
+    - require:
+      - file: bitcurator-theme-start-menu-backup

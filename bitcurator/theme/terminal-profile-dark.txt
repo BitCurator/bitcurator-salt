@@ -1,13 +1,14 @@
 [:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(14,27,38)'
 bold-color-same-as-fg=true
+bold-is-bright=true
 cursor-colors-set=false
 font='Noto Mono Bold 12'
 foreground-color='rgb(192,200,201)'
 highlight-colors-set=false
+palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(28,162,105)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
 use-system-font=false
 use-theme-colors=false
 use-theme-transparency=true
 use-transparent-background=false
-bold-is-bright=true
 visible-name='bitcurator'
