@@ -107,15 +107,16 @@ The **bitcurator** directory contains all support files and salt states in a num
 - **theme**: BitCurator theme resources
 - **tools**: tools that must be installed from source
 
-## BitCurator documentation, help, and other information
+## BitCurator documentation, help, and discussions
 
-Quickstart Guides for BitCurator releases, installation notes, and other technical guidance can be found at https://github.com/BitCurator/bitcurator-distro/wiki/Releases.
+Visit the [BitCurator wiki on GitHub](https://github.com/BitCurator/bitcurator-distro/wiki/Releases) to find the [latest version of our Quickstart Guide](https://github.com/BitCurator/bitcurator-distro/wiki/Releases#quickstart-guide).
 
-Additional user documentation and resources are available in the community maintained pages at [the BitCurator Environment wiki](https://confluence.educopia.org/display/BC).
+Have a question, idea, or use case to share? Post it to the [BitCurator Discussions](https://github.com/orgs/BitCurator/discussions) board!
 
-Questions and comments can also be directed to the bitcurator-users list.
+Some community maintained documentation and resources are available at
+[the BitCurator Confluence instance hosted by Educopia](https://confluence.educopia.org/display/BC). Note that the information on this site may lag behind the latest release(s).
 
-[https://groups.google.com/d/forum/bitcurator-users](https://groups.google.com/d/forum/bitcurator-users)
+Questions and comments can also be sent to the [bitcurator-users Google Group](https://groups.google.com/d/forum/bitcurator-users).
 
 ## License(s)
 
