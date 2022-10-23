@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=0.3.1
+Name=bulk-reviewer
+GenericName=ForensicTool
+Comment=bulk-reviewer
+Icon=/usr/share/icons/bitcurator/bulk-reviewer.png
+Exec=bulk-reviewer
+Categories=Forensics and Reporting
