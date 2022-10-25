@@ -10,13 +10,13 @@ This repo includes the SaltStack states and supporting files to install the data
 
 Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quickstart Guide. Pre-configured VMs are also available for some current and past releases.
 
-**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, it is not possible to deploy it on systems with ARM processors (including Apple M1).**
+**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, it is not possible to deploy it as the host OS or in a VM on systems with ARM processors (including Apple M1 and M2).**
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
 ## Install Ubuntu (22.04LTS or 20.04LTS)
 
-Download the most recent 64-bit Ubuntu 22.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 4GB of RAM and 64GB of disk space to the instance. You may also use a release of Ubuntu 20.04LTS if needed.
+Download the most recent 64-bit Ubuntu 22.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may also use a release of Ubuntu 20.04LTS if needed.
 
 To remain consistent with the default configuration of BitCurator, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password.
 
@@ -33,7 +33,7 @@ BitCurator uses a standalone command-line tool for installation and upgrade. Fir
 wget https://distro.ibiblio.org/bitcurator/bitcurator-cli-linux
 ```
 
-Verify that the SHA-256 has of the downloaded file (currently v1.0.0) matches the value below:
+Verify that the SHA-256 has of the downloaded file (current release: v1.0.0) matches the value below:
 
 ```shell
 5acab7abcafa24864d49e4872f8e2b562c16bf4842256ad3f994aae8d0df77c1
@@ -96,7 +96,6 @@ The **.ci** directory contains a selection of shell scripts used to build and te
 
 The **bitcurator** directory contains all support files and salt states in a number of different directories:
 
-- **attic**: Legacy and unused files that have been kept for reference or potential future use
 - **config**: Salt states and support files for environment and user configuration
 - **env**: Environment support files and salt states for the user desktop and various tools
 - **files**: Source packages and deb packages for tools where a legacy version is required, or no packaging exists
@@ -128,9 +127,9 @@ In addition to software produced by the BitCurator team, BitCurator packages and
 
 ## Development Team and Support
 
-The BitCurator environment is a product of the BitCurator team housed at the School of Information and Library Science at the University of North Carolina at Chapel Hill. Funding between 2011 and 2014 was provided by the Andrew W. Mellon Foundation.
+The BitCurator environment is volunteer-maintained. BitCurator was originally developed in the School of Library and Information Science at the University of North Carolina at Chapel Hill with funding provided by the Andrew W. Mellon Foundation (2011-2014).
 
-Ongoing support for the BitCurator environment is managed by the BitCurator Consortium. Find out more at:
+Community support is managed by the BitCurator Consortium. Find out more at:
 
 http://www.bitcuratorconsortium.net/
 
