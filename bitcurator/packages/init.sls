@@ -9,6 +9,7 @@ include:
   - bitcurator.packages.bless
   - bitcurator.packages.brasero
   - bitcurator.packages.build-essential
+  - bitcurator.packages.bulk-reviewer
   - bitcurator.packages.cdrdao
   - bitcurator.packages.clamav
   - bitcurator.packages.clamav-daemon
@@ -161,6 +162,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.bless
       - sls: bitcurator.packages.brasero
       - sls: bitcurator.packages.build-essential
+      - sls: bitcurator.packages.bulk-reviewer
       - sls: bitcurator.packages.cdrdao
       - sls: bitcurator.packages.clamav
       - sls: bitcurator.packages.clamav-daemon
