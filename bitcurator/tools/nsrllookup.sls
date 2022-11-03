@@ -1,3 +1,5 @@
+{% set hash = 'bdc17e38880f909eeaec60804db2276761c309279735eb42c781f6757edd4061' %}
+
 include:
   - bitcurator.packages.build-essential
   - bitcurator.packages.cmake
@@ -11,7 +13,7 @@ nsrllookup-source:
   file.managed:
     - name: /tmp/1.4.2.tar.gz
     - source: https://github.com/rjhansen/nsrllookup/archive/refs/tags/1.4.2.tar.gz
-    - source_hash: sha256=bdc17e38880f909eeaec60804db2276761c309279735eb42c781f6757edd4061
+    - source_hash: sha256={{ hash }}
 
 nsrllookup-extract:
   archive.extracted:

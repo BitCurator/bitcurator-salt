@@ -1,4 +1,5 @@
 {% set user = salt['pillar.get']('bitcurator_user', 'bcadmin') %}
+{% set group = salt['pillar.get']('bitcurator_group', user) %}
 {% if user == "root" %}
   {% set home = "/root" %}
 {% else %}
@@ -16,7 +17,7 @@ bitcurator-user-{{ user }}:
     - name: {{ user }}
   user.present:
     - name: {{ user }}
-    - gid: {{ user }}
+    - gid: {{ group }}
     - fullname: BitCurator
     - shell: /bin/bash
     - home: {{ home }}

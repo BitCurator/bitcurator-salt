@@ -4,6 +4,12 @@
 {% else %}
   {% set home = "/home/" + user %}
 {% endif %}
+{% set all_users = salt['user.list_users']() %}
+{% if user in all_users %}
+  {% set group = salt['cmd.run']('id -gn ' + user) %}
+{% else %}
+  {% set group = user %}
+{% endif %}
 
 include:
   - bitcurator.config.user
@@ -19,7 +25,7 @@ bitcurator-theme-config-autostart:
   file.managed:
     - replace: False
     - user: {{ user }}
-    - group: {{ user }}
+    - group: {{ group }}
     - name: {{ home }}/.config/autostart/bitcurator-theme.desktop
     - source: salt://bitcurator/theme/bitcurator-theme.desktop
     - makedirs: True
