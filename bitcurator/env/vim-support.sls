@@ -1,13 +1,24 @@
 {% set user = salt['pillar.get']('bitcurator_user', 'bcadmin') %}
+{% if user == "root" %}
+  {% set home = "/root" %}
+{% else %}
+  {% set home = "/home/" + user %}
+{% endif %}
+{% set all_users = salt['user.list_users']() %}
+{% if user in all_users %}
+  {% set group = salt['cmd.run']('id -gn ' + user) %}
+{% else %}
+  {% set group = user %}
+{% endif %}
 
 include:
   - bitcurator.config.user
 
-/home/{{ user }}/.vim:
+{{ home }}/.vim:
   file.recurse:
     - source: salt://bitcurator/env/.vim
     - user: {{ user }}
-    - group: {{ user }}
+    - group: {{ group }}
     - makedirs: True
     - file_mode: keep
     - require:
@@ -16,12 +27,12 @@ include:
 vim-directories:
   file.directory:
     - names:
-      - /home/{{ user }}/.vim/backups
-      - /home/{{ user }}/.vim/swaps
+      - {{ home }}/.vim/backups
+      - {{ home }}/.vim/swaps
     - user: {{ user }}
+    - group: {{ group }}
     - file_mode: 755
     - dir_mode: 755
-    - group: {{ user }}
     - makedirs: True
     - require:
-      - file: /home/{{ user }}/.vim
+      - file: {{ home }}/.vim
