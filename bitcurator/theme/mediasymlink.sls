@@ -1,9 +1,5 @@
 {% set user = salt['pillar.get']('bitcurator_user', 'bcadmin') %}
-{% if user == "root" %}
-  {% set home = "/root" %}
-{% else %}
-  {% set home = "/home/" + user %}
-{% endif %}
+{% set desktop = salt['cmd.run']('sudo -u ' + user + ' xdg-user-dir DESKTOP') %}
 {% set all_users = salt['user.list_users']() %}
 {% if user in all_users %}
   {% set group = salt['cmd.run']('id -gn ' + user) %}
@@ -16,7 +12,7 @@ include:
 
 mediasymlink:
   file.symlink:
-    - name: {{ home }}/Desktop/Shared Folders and Media
+    - name: {{ desktop }}/Shared Folders and Media
     - target: /media
     - user: {{ user }}
     - group: {{ group }}
