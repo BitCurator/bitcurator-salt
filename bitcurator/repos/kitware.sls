@@ -10,7 +10,8 @@ include:
 bitcurator-kitware-key:
   file.managed:
     - name: /usr/share/keyrings/KITWARE-PGP-KEY.asc
-    - source: salt://bitcurator/repos/files/KITWARE-PGP-KEY.asc
+    - source: https://apt.kitware.com/keys/kitware-archive-latest.asc
+    - skip_verify: True
     - makedirs: True
 
 bitcurator-kitware-repo:
