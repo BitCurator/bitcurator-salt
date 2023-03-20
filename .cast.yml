@@ -1,0 +1,22 @@
+release:
+  github:
+    owner: bitcurator
+    repo: bitcurator-salt
+manifest:
+  version: 2
+  name: bitcurator
+  base_dir: bitcurator
+  modes:
+    - name: addon
+      state: bitcurator.addon
+    - name: dedicated
+      state: bitcurator.dedicated
+      default: true
+  supported_os:
+    - id: ubuntu
+      release: 20.04
+    - id: ubuntu
+      release: 22.04
+  saltstack:
+    pillars:
+      bitcurator_user_template: "{{ .User }}"

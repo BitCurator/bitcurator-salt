@@ -21,8 +21,8 @@ libuna-install:
   cmd.run:
     - names: 
       - ./configure
-      - make
-      - make install
+      - make -s
+      - make install -s
       - ldconfig
     - cwd: /tmp/libuna-{{ version }}
     - shell: /bin/bash
