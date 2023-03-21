@@ -47,8 +47,8 @@ bulk-extractor-build:
     - names:
       - ./bootstrap.sh
       - ./configure
-      - make
-      - make install
+      - make -s
+      - make install -s
     - cwd: /usr/local/src/bulk_extractor
     - require:
       - git: bulk-extractor-source

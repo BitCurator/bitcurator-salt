@@ -12,9 +12,6 @@ dumpfloppy-source:
   git.cloned:
     - name: https://offog.org/git/dumpfloppy.git
     - target: /tmp/dumpfloppy
-#    - user: root
-#    - force_checkout: True
-#    - force_reset: True
     - require:
       - sls: bitcurator.packages.git
       - sls: bitcurator.packages.build-essential
@@ -26,8 +23,8 @@ dumpfloppy-build:
       - autoconf -f
       - automake --add-missing
       - ./configure
-      - make
-      - make install
+      - make -s
+      - make install -s
       - ldconfig
     - cwd: /tmp/dumpfloppy/
     - shell: /bin/bash
