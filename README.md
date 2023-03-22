@@ -107,7 +107,10 @@ Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/lat
 sudo curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest/salt-archive-keyring.gpg
 ```
 
-`echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list`
+```shell
+echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list`
+```
+
  
 ```shell
 sudo apt update
@@ -126,7 +129,7 @@ Cloning or otherwise copying the bitcurator-salt repo will create local copies o
 git clone https://github.com/BitCurator/bitcurator-salt.git
 ```
 
-**4. Run salt to install the environment**  
+**4. Run Salt to install the environment**  
 
 Navigate to the location of the cloned repo. From inside the `bitcurator-salt` directory, run the command below:
 
@@ -134,7 +137,7 @@ Navigate to the location of the cloned repo. From inside the `bitcurator-salt` d
 sudo salt-call -l debug --file-root .  --local --retcode-passthrough --state-output=mixed state.sls bitcurator.dedicated pillar='{"bitcurator_user": "<username>"}'
 ```
 
-Using the "dedicated" version of the install will include all of the tools and the interface customizations. Using the "addon" version includes just the tools, with no change to theme, colors, or other interface bits. The <username> is the user for which you'd like the environment to be configured. This must be an existing user on the system.
+Using the "dedicated" version of the install will include all of the tools and the interface customizations. Using the "addon" version includes just the tools, with no change to theme, colors, or other interface bits. The \<username> is the user for which you'd like the environment to be configured. This must be an existing user on the system.
 
 **5. Reboot**  
 
