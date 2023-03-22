@@ -88,6 +88,66 @@ sudo reboot
 After the reboot, you will be automatically logged in to BitCurator.
 
 
+## Manual Installation
+
+Manual installation outside of the BitCurator CLI installer can be useful for testing and development. Following installation of Ubuntu:
+
+**1. Install `curl`**  
+
+Curl is required for manual installation of the Salt Project tools.
+```shell
+sudo apt install curl
+```
+
+**2. Install Salt**  
+
+Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/ubuntu.html, to install Salt 3005 in the base Ubuntu environment:
+
+```shell
+sudo curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest/salt-archive-keyring.gpg
+```
+
+`echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list`
+ 
+```shell
+sudo apt update
+sudo apt install salt-master
+sudo apt install salt-minion
+
+sudo systemctl enable salt-master && sudo systemctl start salt-master
+sudo systemctl enable salt-minion && sudo systemctl start salt-minion
+```
+
+**3. Clone the bitcurator-salt repo**  
+
+Cloning or otherwise copying the bitcurator-salt repo will create local copies of the environment configuration files for use in installation. Git can be installed with the following command: `sudo apt install git`
+
+```shell
+git clone https://github.com/BitCurator/bitcurator-salt.git
+```
+
+**4. Run salt to install the environment**  
+
+Navigate to the location of the cloned repo. From inside the `bitcurator-salt` directory, run the command below:
+
+```shell
+sudo salt-call -l debug --file-root .  --local --retcode-passthrough --state-output=mixed state.sls bitcurator.dedicated pillar='{"bitcurator_user": "<username>"}'
+```
+
+Using the "dedicated" version of the install will include all of the tools and the interface customizations. Using the "addon" version includes just the tools, with no change to theme, colors, or other interface bits. The <username> is the user for which you'd like the environment to be configured. This must be an existing user on the system.
+
+**5. Reboot**  
+
+When the installation is complete, reboot your system from the terminal:
+
+```shell
+sudo reboot
+```
+
+After the reboot, you will be automatically logged in to BitCurator.
+
+
+
 ## What's in this repository
 
 This repository has been organized to make the process of maintaining and contributing to BitCurator development as transparent as possible. An explanation of the layout follows.
