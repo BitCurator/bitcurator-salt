@@ -25,7 +25,20 @@ When installation is completed, reboot, log in, and open a terminal.
 
 ## Using the Installer
 
-**1. Download the BitCurator CLI installer**
+**1. Prepare your environment**
+
+To ensure you have all of the tools, and updates necessary for the BitCurator environment to succeed, you should update the local `apt` repository and install the necessary tools:
+
+```shell
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install gnupg curl git -y
+```
+
+`gnupg` is required for the BitCurator installer to validate the signature of the BitCurrator configuration files during install.
+`curl` can be used when developing or testing state files.
+`git` is used to clone local GitHub repos, and can be used when testing state files from the [BitCurator SaltStack Repo](https://github.com/bitcurator/bitcurator-salt).
+
+**2. Download the BitCurator CLI installer**
 
 BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
@@ -48,17 +61,8 @@ sha256sum bitcurator-cli-linux
 Next, adjust some permissions and move the BitCurator installer to the correct location:
 
 ```shell
-mv bitcurator-cli-linux bitcurator
-chmod +x bitcurator
-sudo mv bitcurator /usr/local/bin
-```
-
-**2. Install GnuPG**
-
-GnuPG is required for the BitCurator installer to validate the signature of the BitCurrator configuration files during install. To install GnuPG, run:
-
-```shell
-sudo apt install -y gnupg
+sudo bitcurator-cli-linux /usr/local/bin/bitcurator
+sudo chmod +x /usr/local/bin/bitcurator
 ```
 
 **3. Run the BitCurator CLI Installer**
@@ -71,10 +75,10 @@ sudo bitcurator install
 
 The installation may take up to an hour, depending on the speed of your system.
 
-If you encounter an error, you may be able to identify the issue by reviewing saltstack.log file under /var/cache/bitcurator/cli in the subdirectory that matches the BitCcurator state-files version you're installing. Search for the log file for result: false messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
+If you encounter an error, you may be able to identify the issue by reviewing saltstack.log file under /var/cache/bitcurator/cli in the subdirectory that matches the BitCurator state-files version you're installing. Search for the log file for result: false messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
 
 ```shell
-grep -i -C 5 'result: false' or grep -i -B 8 'result: false'
+grep -i -C 5 'result: false' /var/cache/bitcurator/<version>/cli/saltstack.log or grep -i -B 8 'result: false' /var/cache/bitcurator/<version>/cli/saltstack.log
 ```
 
 **5. Reboot**
@@ -82,7 +86,7 @@ grep -i -C 5 'result: false' or grep -i -B 8 'result: false'
 When the installation is complete, reboot your system from the terminal:
 
 ```shell
-sudo reboot
+sudo reboot now
 ```
 
 After the reboot, you will be automatically logged in to BitCurator.
@@ -92,14 +96,14 @@ After the reboot, you will be automatically logged in to BitCurator.
 
 Manual installation outside of the BitCurator CLI installer can be useful for testing and development. Following installation of Ubuntu:
 
-**1. Install `curl`**  
+**1. Install curl, git, and gnupg if not already installed**
 
 Curl is required for manual installation of the Salt Project tools.
 ```shell
-sudo apt install curl
+sudo apt update && sudo apt install curl gnupg git -y
 ```
 
-**2. Install Salt**  
+**2. Install Salt**
 
 Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/ubuntu.html, to install Salt 3005 in the base Ubuntu environment:
 
@@ -111,40 +115,36 @@ sudo curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.sal
 echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list
 ```
 
- 
+
 ```shell
 sudo apt update
-sudo apt install salt-master
-sudo apt install salt-minion
-
-sudo systemctl enable salt-master && sudo systemctl start salt-master
-sudo systemctl enable salt-minion && sudo systemctl start salt-minion
+sudo apt install salt-common
 ```
 
-**3. Clone the bitcurator-salt repo**  
+**3. Clone the bitcurator-salt repo**
 
-Cloning or otherwise copying the bitcurator-salt repo will create local copies of the environment configuration files for use in installation. Git can be installed with the following command: `sudo apt install git`
+Clone the bitcurator-salt repo to create local copies of the environment configuration files for use in installation.
 
 ```shell
 git clone https://github.com/BitCurator/bitcurator-salt.git
 ```
 
-**4. Run Salt to install the environment**  
+**4. Run Salt to install the environment**
 
 Navigate to the location of the cloned repo. From inside the `bitcurator-salt` directory, run the command below:
 
 ```shell
-sudo salt-call -l debug --file-root .  --local --retcode-passthrough --state-output=mixed state.sls bitcurator.dedicated pillar='{"bitcurator_user": "<username>"}'
+sudo salt-call -l debug --file-root . --local --retcode-passthrough --state-output=mixed state.sls bitcurator.dedicated pillar='{"bitcurator_user": "<username>"}'
 ```
 
-Using the "dedicated" version of the install will include all of the tools and the interface customizations. Using the "addon" version includes just the tools, with no change to theme, colors, or other interface bits. The \<username> is the user for which you'd like the environment to be configured. This must be an existing user on the system.
+Using the `dedicated` mode/state of the install will include all of the tools and the interface customizations, just as if using the `sudo bitcurator install` command with the CLI. Using the `addon` mode/state will only install just the tools, with no change to theme, colors, or other interface bits. The `<username>` is the user for which you'd like the environment to be configured. This must be an existing user on the system.
 
-**5. Reboot**  
+**5. Reboot**
 
 When the installation is complete, reboot your system from the terminal:
 
 ```shell
-sudo reboot
+sudo reboot now
 ```
 
 After the reboot, you will be automatically logged in to BitCurator.
