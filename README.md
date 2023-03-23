@@ -61,7 +61,7 @@ sha256sum bitcurator-cli-linux
 Next, adjust some permissions and move the BitCurator installer to the correct location:
 
 ```shell
-sudo bitcurator-cli-linux /usr/local/bin/bitcurator
+sudo mv bitcurator-cli-linux /usr/local/bin/bitcurator
 sudo chmod +x /usr/local/bin/bitcurator
 ```
 
