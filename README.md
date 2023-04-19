@@ -194,5 +194,4 @@ The BitCurator environment is volunteer-maintained. BitCurator was originally de
 
 Community support is managed by the BitCurator Consortium. Find out more at:
 
-http://www.bitcuratorconsortium.net/
-
+https://bitcuratorconsortium.org/
