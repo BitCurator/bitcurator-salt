@@ -1,7 +1,8 @@
 bitcurator-siegfried-key:
   file.managed:
     - name: /usr/share/keyrings/SIEGFRIED-PGP-KEY.asc
-    - source: salt://bitcurator/repos/files/SIEGFRIED-PGP-KEY.asc
+    - source: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x20F802FE798E6857
+    - skip_verify: True
     - makedirs: True
 
 bitcurator-siegfried-repo:

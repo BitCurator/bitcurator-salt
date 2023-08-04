@@ -1,5 +1,5 @@
-{% set version = '20220102' %}
-{% set hash = '349e2c40e88b1248a2766a2b67699c17b3de3b90a2ffbe63c858ef4e9fcb0694' %}
+{% set version = '20220611' %}
+{% set hash = '20791e301d768be4b61f1ef551f304d0c386c32a78efa6619fa4cafa8ab9f231' %}
 
 include:
   - bitcurator.packages.build-essential
