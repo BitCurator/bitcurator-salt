@@ -43,7 +43,7 @@ sudo apt-get install gnupg curl git -y
 BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
 ```shell
-wget https://distro.ibiblio.org/bitcurator/bitcurator-cli-linux
+wget https://github.com/BitCurator/bitcurator-cli/releases/download/v1.0.0/bitcurator-cli-linux
 ```
 
 Verify that the SHA-256 has of the downloaded file (current release: v1.0.0) matches the value below:
