@@ -10,6 +10,7 @@ include:
   - bitcurator.packages.brasero
   - bitcurator.packages.build-essential
   - bitcurator.packages.bulk-reviewer
+  - bitcurator.packages.ccrypt
   - bitcurator.packages.cdrdao
   - bitcurator.packages.clamav
   - bitcurator.packages.clamav-daemon
@@ -50,6 +51,7 @@ include:
   - bitcurator.packages.hfsutils
   - bitcurator.packages.hfsutils-tcltk
   - bitcurator.packages.icedax
+  - bitcurator.packages.leptonica-progs
   - bitcurator.packages.libafflib-dev
   - bitcurator.packages.libappindicator1
   - bitcurator.packages.libappindicator3-dev
@@ -102,6 +104,7 @@ include:
   - bitcurator.packages.libxml2-utils
   - bitcurator.packages.libxslt1-dev
   - bitcurator.packages.linux-headers-generic
+  - bitcurator.packages.mate-utils
   - bitcurator.packages.mediainfo
   - bitcurator.packages.mencoder
   - bitcurator.packages.mokutil
@@ -163,6 +166,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.brasero
       - sls: bitcurator.packages.build-essential
       - sls: bitcurator.packages.bulk-reviewer
+      - sls: bitcurator.packages.ccrypt
       - sls: bitcurator.packages.cdrdao
       - sls: bitcurator.packages.clamav
       - sls: bitcurator.packages.clamav-daemon
@@ -203,6 +207,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.hfsutils
       - sls: bitcurator.packages.hfsutils-tcltk
       - sls: bitcurator.packages.icedax
+      - sls: bitcurator.packages.leptonica-progs
       - sls: bitcurator.packages.libafflib-dev
       - sls: bitcurator.packages.libappindicator1
       - sls: bitcurator.packages.libappindicator3-dev
@@ -255,6 +260,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libxml2-utils
       - sls: bitcurator.packages.libxslt1-dev
       - sls: bitcurator.packages.linux-headers-generic
+      - sls: bitcurator.packages.mate-utils
       - sls: bitcurator.packages.mediainfo
       - sls: bitcurator.packages.mencoder
       - sls: bitcurator.packages.mokutil

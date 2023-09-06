@@ -38,6 +38,6 @@ if $(zenity --question \
 then
 	rm -rf "$temp_dir"
 fi
-	
+
 exit 0
 
