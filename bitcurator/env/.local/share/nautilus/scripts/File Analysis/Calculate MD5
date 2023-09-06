@@ -51,7 +51,7 @@ if [ $filesCount == 1 ] ; then
       (md5sum "${files[0]}" > "$filename.md5") 2>&1 | zenity --progress --title "Make md5" --text "Making: $filename.md5" --pulsate --auto-close;
     elif [ "$choice" == "Display on screen" ] ; then
       md5Hash=`md5sum "$file"`;
-      zenity --entry --title "Calculate MD5 (Files and Directories)" --text="The MD5 hash of the selected file:" --entry-text="$md5Hash";
+      zenity --entry --title "Calculate MD5 (Files and Directories)" --text="The MD5 hash of the selected file:" --entry-text="$md5Hash" --width 640;
     else
       echo ""
     fi

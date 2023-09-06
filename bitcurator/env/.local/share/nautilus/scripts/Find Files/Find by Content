@@ -1,5 +1,6 @@
 #!/bin/bash
 #Find by Content
 #by John Lehr (c) 2009
+#Updated for mate-search-tool
 
-gnome-search-tool --contains="" --path="$(pwd)"
+mate-search-tool --contains="" --path="$(pwd)"

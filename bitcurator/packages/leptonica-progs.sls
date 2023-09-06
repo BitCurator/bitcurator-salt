@@ -1,0 +1,2 @@
+leptonica-progs:
+  pkg.installed
