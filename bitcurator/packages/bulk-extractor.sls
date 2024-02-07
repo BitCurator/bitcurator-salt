@@ -12,6 +12,7 @@ include:
   - bitcurator.packages.libewf
   - bitcurator.packages.libewf-dev
   - bitcurator.packages.libexpat1-dev
+  - bitcurator.packages.libre2-dev
   - bitcurator.packages.libxml2-utils
   - bitcurator.packages.libtool
   - bitcurator.packages.pkg-config
@@ -24,7 +25,7 @@ bulk-extractor-source:
     - name: https://github.com/simsong/bulk_extractor
     - target: /usr/local/src/bulk_extractor
     - user: root
-    - rev: main
+    - rev: v2.1.0
     - submodules: True
     - force_clone: True
     - force_reset: True
@@ -35,6 +36,7 @@ bulk-extractor-source:
       - sls: bitcurator.packages.libewf
       - sls: bitcurator.packages.libewf-dev
       - sls: bitcurator.packages.libexpat1-dev
+      - sls: bitcurator.packages.libre2-dev
       - sls: bitcurator.packages.libxml2-utils
       - sls: bitcurator.packages.libtool
       - sls: bitcurator.packages.pkg-config
