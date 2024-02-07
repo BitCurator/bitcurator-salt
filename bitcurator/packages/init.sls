@@ -84,6 +84,7 @@ include:
   - bitcurator.packages.libnss-myhostname
   - bitcurator.packages.libparse-win32registry-perl
   - bitcurator.packages.libpthread-stubs0-dev
+  - bitcurator.packages.libre2-dev
   - bitcurator.packages.libreadline-dev
   - bitcurator.packages.libsodium23
   - bitcurator.packages.libsodium-dev
@@ -240,6 +241,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libnss-myhostname
       - sls: bitcurator.packages.libparse-win32registry-perl
       - sls: bitcurator.packages.libpthread-stubs0-dev
+      - sls: bitcurator.packages.libre2-dev
       - sls: bitcurator.packages.libreadline-dev
       - sls: bitcurator.packages.libsodium23
       - sls: bitcurator.packages.libsodium-dev
