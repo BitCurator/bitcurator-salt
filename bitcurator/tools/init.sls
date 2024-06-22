@@ -3,6 +3,7 @@ include:
   - bitcurator.tools.dumpfloppy
   - bitcurator.tools.regripper
   - bitcurator.tools.nsrllookup
+  - bitcurator.tools.deark
 
 bitcurator-tools:
   test.nop:
@@ -12,3 +13,4 @@ bitcurator-tools:
       - sls: bitcurator.tools.dumpfloppy
       - sls: bitcurator.tools.regripper
       - sls: bitcurator.tools.nsrllookup
+      - sls: bitcurator.tools.deark
