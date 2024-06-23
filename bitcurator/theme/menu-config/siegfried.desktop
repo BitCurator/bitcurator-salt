@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=0.0.1
+Name=siegfried
+GenericName=ForensicTool
+Comment=siegfried command-line tool
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-siegfried.sh
+Categories=Forensics and Reporting
+
