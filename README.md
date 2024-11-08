@@ -176,12 +176,12 @@ The **bitcurator** directory contains all support files and salt states in a num
 
 Visit the [BitCurator wiki on GitHub](https://github.com/BitCurator/bitcurator-distro/wiki/Releases) to find the [latest version of our Quickstart Guide](https://github.com/BitCurator/bitcurator-distro/wiki/Releases#quickstart-guide).
 
-Have a question, idea, or use case to share? Post it to the [BitCurator Discussions](https://github.com/orgs/BitCurator/discussions) board!
+Have a question or need help? Visit the [bitcurator-users Google Group](https://groups.google.com/d/forum/bitcurator-users).
 
 Some community maintained documentation and resources are available at
-[the BitCurator Confluence instance hosted by Educopia](https://confluence.educopia.org/display/BC). Note that the information on this site may lag behind the latest release(s).
+[the BitCurator documentation hosted on GitHub Pages]((https://bitcurator.github.io/documentation/). Note that the information on this site may lag behind the latest release(s).
 
-Questions and comments can also be sent to the [bitcurator-users Google Group](https://groups.google.com/d/forum/bitcurator-users).
+A [BitCurator Discussions](https://github.com/orgs/BitCurator/discussions) board is also available for ideas or comments.
 
 ## License(s)
 
