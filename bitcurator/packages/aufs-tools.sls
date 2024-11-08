@@ -1,11 +1,11 @@
-{% if grains['oscodename'] != 'jammy' %}
+{% if grains['oscodename'] == 'focal' %}
 
 aufs-tools:
   pkg.installed
 
 {% else %}
 
-aufs-tools-not-on-jammy:
+aufs-tools-not-on-jammy-and-noble:
   test.nop
 
 {% endif %}

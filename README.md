@@ -13,9 +13,9 @@ Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the 
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
-## Install Ubuntu (22.04LTS or 20.04LTS)
+## Install Ubuntu (24.04 LTS, 22.04LTS, or 20.04LTS)
 
-Download the most recent 64-bit Ubuntu 22.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may also use a release of Ubuntu 20.04LTS if needed.
+Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
 
 To remain consistent with the default configuration of BitCurator, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password.
 
@@ -42,13 +42,13 @@ sudo apt-get install gnupg curl git -y
 BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
 ```shell
-wget https://github.com/BitCurator/bitcurator-cli/releases/download/v1.0.0/bitcurator-cli-linux
+wget https://github.com/BitCurator/bitcurator-cli/releases/download/v2.0.0/bitcurator-cli-linux
 ```
 
-Verify that the SHA-256 has of the downloaded file (current release: v1.0.0) matches the value below:
+Verify that the SHA-256 has of the downloaded file (current release: v2.0.0) matches the value below:
 
 ```shell
-5acab7abcafa24864d49e4872f8e2b562c16bf4842256ad3f994aae8d0df77c1
+UPDATE ON RELEASE
 ```
 
 You can generate the hash of your downloaded file with:
@@ -104,16 +104,20 @@ sudo apt update && sudo apt install curl gnupg git -y
 
 **2. Install Salt**
 
-Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/ubuntu.html, to install Salt 3005 in the base Ubuntu environment:
+Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html, to install Salt 3006 in the base Ubuntu environment:
+
+Run the following command to install the Salt Project repository:
 
 ```shell
-sudo curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest/salt-archive-keyring.gpg
+# Ensure keyrings dir exists
+mkdir -p /etc/apt/keyrings
+# Download public key
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+# Create apt repo target configuration
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
 ```
 
-```shell
-echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list
-```
-
+Update metadata and install salt-common:
 
 ```shell
 sudo apt update

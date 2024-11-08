@@ -3,6 +3,8 @@
   {% set py_ver = 'python3.8' %}
 {% elif grains['oscodename'] == 'jammy' %}
   {% set py_ver = 'python3.10' %}
+{% else %}
+  {% set py_ver = 'python3.12' %}
 {% endif %}
 
 include:

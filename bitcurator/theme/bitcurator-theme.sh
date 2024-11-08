@@ -11,7 +11,7 @@ if [[ $(lsb_release -c -s) == focal ]]; then
   gsettings set org.gnome.shell.extensions.desktop-icons show-home true
   gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
 
-elif [[ $(lsb_release -c -s) == jammy ]]; then
+elif [[ $(lsb_release -c -s) == jammy ]] || [[ $(lsb_release -c -s) == noble ]]; then
   gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/bitcurator/resources/images/BitCurator-Env4-Wallpaper.png'
   gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/bitcurator/resources/images/BitCurator-Env4-Wallpaper.png'
   gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
