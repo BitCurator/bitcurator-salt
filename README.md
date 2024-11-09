@@ -90,6 +90,55 @@ sudo reboot now
 
 After the reboot, you will be automatically logged in to BitCurator.
 
+## Updating and Upgrading
+
+Once BitCurator is installed, you may install additional software and update the Ubuntu OS as normal, either from the Software Center or with `sudo apt-get update && sudo apt-get upgrade` on the command line. We recommend that you decline LTS-to-LTS upgrades (for example, Ubuntu 22.04LTS to 24.04LTS) and perform a clean install when moving to a new LTS.
+
+The BitCurator CLI tool may also be used to selectively upgrade those packages specifically associated with the BitCurator environment, and to upgrade the BitCurator verion. To see all options for the BitCurator CLI, type the following in a terminal:
+
+```shell
+bitcurator --help
+```
+
+This will print a list showing the following options:
+
+```shell
+$ bitcurator --help
+Usage:
+  bitcurator [options] list-upgrades [--pre-release]
+  bitcurator [options] install [--pre-release] [--version=<version>] [--mode=<mode>] [--user=<user>]
+  bitcurator [options] update
+  bitcurator [options] upgrade [--pre-release] [--mode=<mode>] [--user=<user>]
+  bitcurator [options] version
+  bitcurator [options] debug
+  bitcurator -h | --help | -v
+
+Options:
+  --dev                 Developer Mode (do not use, dangerous, bypasses checks)
+  --version=<version>   Specific version install [default: latest]
+  --mode=<mode>         bitcurator installation mode (dedicated or addon, default: dedicated)
+  --user=<user>         User used for bitcurator configuration [default: kamwoods]
+  --no-cache            Ignore the cache, always download the release files
+  --verbose             Display verbose logging
+```
+
+To update the packages and compiled tools specific to the BitCurator environment, enter the command:
+
+```shell
+sudo bitcurator update
+```
+
+To upgrade the BitCurator environment to a new release, use the upgrade option. For example, if you are on release 4.4.0 and wish to upgrade to 4.5.0, the following command would be used:
+
+```shell
+sudo bitcurator upgrade 4.5.0
+```
+
+To see a list of available upgrades, type:
+
+```shell
+bitcurator list-upgrades
+```
 
 ## Manual Installation
 
@@ -151,7 +200,6 @@ sudo reboot now
 ```
 
 After the reboot, you will be automatically logged in to BitCurator.
-
 
 
 ## What's in this repository
