@@ -48,7 +48,7 @@ wget https://github.com/BitCurator/bitcurator-cli/releases/download/v2.0.0/bitcu
 Verify that the SHA-256 has of the downloaded file (current release: v2.0.0) matches the value below:
 
 ```shell
-UPDATE ON RELEASE
+f739a25e8a0a5648aacce5792ee0c4b8d24044947b7c6d75c010f28251846c21
 ```
 
 You can generate the hash of your downloaded file with:
