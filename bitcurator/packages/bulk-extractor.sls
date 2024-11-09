@@ -1,8 +1,13 @@
 {% set files = ['build_stoplist.py', 'bulk_diff.py', 'cda_tool.py', 'post_process_exif.py'] %}
 {% if grains['oscodename'] == 'focal' %}
   {% set py_ver = 'python3.8' %}
+  {% set be_rev = 'v2.0.0' %}
 {% elif grains['oscodename'] == 'jammy' %}
   {% set py_ver = 'python3.10' %}
+  {% set be_rev = 'v2.1.1' %}
+{% else %}
+  {% set py_ver = 'python3.12' %}
+  {% set be_rev = 'v2.1.1' %}
 {% endif %}
 
 include:
@@ -25,7 +30,7 @@ bulk-extractor-source:
     - name: https://github.com/simsong/bulk_extractor
     - target: /usr/local/src/bulk_extractor
     - user: root
-    - rev: v2.1.0
+    - rev: {{ be_rev }}
     - submodules: True
     - force_clone: True
     - force_reset: True

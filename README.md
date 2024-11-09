@@ -13,9 +13,9 @@ Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the 
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
-## Install Ubuntu (22.04LTS or 20.04LTS)
+## Install Ubuntu (24.04 LTS, 22.04LTS, or 20.04LTS)
 
-Download the most recent 64-bit Ubuntu 22.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may also use a release of Ubuntu 20.04LTS if needed.
+Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
 
 To remain consistent with the default configuration of BitCurator, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password.
 
@@ -42,13 +42,13 @@ sudo apt-get install gnupg curl git -y
 BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
 ```shell
-wget https://github.com/BitCurator/bitcurator-cli/releases/download/v1.0.0/bitcurator-cli-linux
+wget https://github.com/BitCurator/bitcurator-cli/releases/download/v2.0.0/bitcurator-cli-linux
 ```
 
-Verify that the SHA-256 has of the downloaded file (current release: v1.0.0) matches the value below:
+Verify that the SHA-256 has of the downloaded file (current release: v2.0.0) matches the value below:
 
 ```shell
-5acab7abcafa24864d49e4872f8e2b562c16bf4842256ad3f994aae8d0df77c1
+UPDATE ON RELEASE
 ```
 
 You can generate the hash of your downloaded file with:
@@ -90,6 +90,55 @@ sudo reboot now
 
 After the reboot, you will be automatically logged in to BitCurator.
 
+## Updating and Upgrading
+
+Once BitCurator is installed, you may install additional software and update the Ubuntu OS as normal, either from the Software Center or with `sudo apt-get update && sudo apt-get upgrade` on the command line. We recommend that you decline LTS-to-LTS upgrades (for example, Ubuntu 22.04LTS to 24.04LTS) and perform a clean install when moving to a new LTS.
+
+The BitCurator CLI tool may also be used to selectively upgrade those packages specifically associated with the BitCurator environment, and to upgrade the BitCurator verion. To see all options for the BitCurator CLI, type the following in a terminal:
+
+```shell
+bitcurator --help
+```
+
+This will print a list showing the following options:
+
+```shell
+$ bitcurator --help
+Usage:
+  bitcurator [options] list-upgrades [--pre-release]
+  bitcurator [options] install [--pre-release] [--version=<version>] [--mode=<mode>] [--user=<user>]
+  bitcurator [options] update
+  bitcurator [options] upgrade [--pre-release] [--mode=<mode>] [--user=<user>]
+  bitcurator [options] version
+  bitcurator [options] debug
+  bitcurator -h | --help | -v
+
+Options:
+  --dev                 Developer Mode (do not use, dangerous, bypasses checks)
+  --version=<version>   Specific version install [default: latest]
+  --mode=<mode>         bitcurator installation mode (dedicated or addon, default: dedicated)
+  --user=<user>         User used for bitcurator configuration [default: kamwoods]
+  --no-cache            Ignore the cache, always download the release files
+  --verbose             Display verbose logging
+```
+
+To update the packages and compiled tools specific to the BitCurator environment, enter the command:
+
+```shell
+sudo bitcurator update
+```
+
+To upgrade the BitCurator environment to a new release, use the upgrade option. For example, if you are on release 4.4.0 and wish to upgrade to 4.5.0, the following command would be used:
+
+```shell
+sudo bitcurator upgrade 4.5.0
+```
+
+To see a list of available upgrades, type:
+
+```shell
+bitcurator list-upgrades
+```
 
 ## Manual Installation
 
@@ -104,16 +153,20 @@ sudo apt update && sudo apt install curl gnupg git -y
 
 **2. Install Salt**
 
-Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/ubuntu.html, to install Salt 3005 in the base Ubuntu environment:
+Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html, to install Salt 3006 in the base Ubuntu environment:
+
+Run the following command to install the Salt Project repository:
 
 ```shell
-sudo curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest/salt-archive-keyring.gpg
+# Ensure keyrings dir exists
+mkdir -p /etc/apt/keyrings
+# Download public key
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+# Create apt repo target configuration
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
 ```
 
-```shell
-echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/latest jammy main" | sudo tee /etc/apt/sources.list.d/salt.list
-```
-
+Update metadata and install salt-common:
 
 ```shell
 sudo apt update
@@ -149,7 +202,6 @@ sudo reboot now
 After the reboot, you will be automatically logged in to BitCurator.
 
 
-
 ## What's in this repository
 
 This repository has been organized to make the process of maintaining and contributing to BitCurator development as transparent as possible. An explanation of the layout follows.
@@ -172,12 +224,12 @@ The **bitcurator** directory contains all support files and salt states in a num
 
 Visit the [BitCurator wiki on GitHub](https://github.com/BitCurator/bitcurator-distro/wiki/Releases) to find the [latest version of our Quickstart Guide](https://github.com/BitCurator/bitcurator-distro/wiki/Releases#quickstart-guide).
 
-Have a question, idea, or use case to share? Post it to the [BitCurator Discussions](https://github.com/orgs/BitCurator/discussions) board!
+Have a question or need help? Visit the [bitcurator-users Google Group](https://groups.google.com/d/forum/bitcurator-users).
 
 Some community maintained documentation and resources are available at
-[the BitCurator Confluence instance hosted by Educopia](https://confluence.educopia.org/display/BC). Note that the information on this site may lag behind the latest release(s).
+[the BitCurator documentation hosted on GitHub Pages]((https://bitcurator.github.io/documentation/). Note that the information on this site may lag behind the latest release(s).
 
-Questions and comments can also be sent to the [bitcurator-users Google Group](https://groups.google.com/d/forum/bitcurator-users).
+A [BitCurator Discussions](https://github.com/orgs/BitCurator/discussions) board is also available for ideas or comments.
 
 ## License(s)
 
