@@ -17,6 +17,8 @@ manifest:
       release: 20.04
     - id: ubuntu
       release: 22.04
+    - id: ubuntu
+      release: 24.04
   saltstack:
     pillars:
       bitcurator_user_template: "{{ .User }}"

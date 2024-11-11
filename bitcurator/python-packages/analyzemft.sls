@@ -1,5 +1,8 @@
+{% set commit = 'b1d0e6a0aa58d42000bfdb8e6588513bd62eaeab' %}
+
 include:
   - bitcurator.packages.python3-virtualenv
+  - bitcurator.packages.git
 
 analyzemft-venv:
   virtualenv.managed:
@@ -12,12 +15,14 @@ analyzemft-venv:
     - require:
       - sls: bitcurator.packages.python3-virtualenv
 
-analyzemft:
+analyzemft-install:
   pip.installed:
+    - name: git+https://github.com/rowingdude/analyzemft.git@{{ commit }}
     - bin_env: /opt/analyzemft/bin/python3
     - upgrade: True
     - require:
       - virtualenv: analyzemft-venv
+      - sls: bitcurator.packages.git
 
 analyzemft-symlink:
   file.symlink:
@@ -25,4 +30,4 @@ analyzemft-symlink:
     - target: /opt/analyzemft/bin/analyzemft
     - makedirs: False
     - require:
-      - pip: analyzemft
+      - pip: analyzemft-install
