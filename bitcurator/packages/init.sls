@@ -151,6 +151,7 @@ include:
   - bitcurator.packages.yad
   - bitcurator.packages.zerofree
   - bitcurator.packages.zlib1g-dev
+  - bitcurator.packages.python3-tsk
 
 bitcurator-packages:
   test.nop:
@@ -307,3 +308,4 @@ bitcurator-packages:
       - sls: bitcurator.packages.yad
       - sls: bitcurator.packages.zerofree
       - sls: bitcurator.packages.zlib1g-dev
+      - sls: bitcurator.packages.python3-tsk

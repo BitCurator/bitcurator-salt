@@ -16,7 +16,6 @@ include:
   - bitcurator.python-packages.python-dateutil
   - bitcurator.python-packages.python-evtx
   - bitcurator.python-packages.python-registry
-  - bitcurator.python-packages.pytsk3
   - bitcurator.python-packages.setuptools
   - bitcurator.python-packages.six
   - bitcurator.python-packages.unicodecsv
@@ -44,7 +43,6 @@ bitcurator-python-packages:
       - sls: bitcurator.python-packages.python-dateutil
       - sls: bitcurator.python-packages.python-evtx
       - sls: bitcurator.python-packages.python-registry
-      - sls: bitcurator.python-packages.pytsk3
       - sls: bitcurator.python-packages.setuptools
       - sls: bitcurator.python-packages.six
       - sls: bitcurator.python-packages.unicodecsv
