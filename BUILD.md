@@ -27,3 +27,68 @@ Once successful, the release will be available on your GitHub repo.
 
 #### Step 3 - Profit
 If done properly, you should only ever have to do Step 2 from here-on-in, unless you change your dev environment frequently.
+
+## Building Releases of the BitCurator Environment
+
+See **BUILD.md** for info on how releases are generated using the existing shell scripts.
+
+## Manual Builds of the BitCurator Environment
+
+Manual installation outside of the BitCurator CLI installer can be useful for testing and development. Following installation of Ubuntu:
+
+**1. Install curl, git, and gnupg if not already installed**
+
+Curl is required for manual installation of the Salt Project tools.
+```shell
+sudo apt update && sudo apt install curl gnupg git -y
+```
+
+**2. Install Salt**
+
+Follow the instructions at https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html, to install Salt 3006 in the base Ubuntu environment:
+
+Run the following command to install the Salt Project repository:
+
+```shell
+# Ensure keyrings dir exists
+mkdir -p /etc/apt/keyrings
+# Download public key
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+# Create apt repo target configuration
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
+```
+
+Update metadata and install salt-common:
+
+```shell
+sudo apt update
+sudo apt install salt-common
+```
+
+**3. Clone the bitcurator-salt repo**
+
+Clone the bitcurator-salt repo to create local copies of the environment configuration files for use in installation.
+
+```shell
+git clone https://github.com/BitCurator/bitcurator-salt.git
+```
+
+**4. Run Salt to install the environment**
+
+Navigate to the location of the cloned repo. From inside the `bitcurator-salt` directory, run the command below:
+
+```shell
+sudo salt-call -l debug --file-root . --local --retcode-passthrough --state-output=mixed state.sls bitcurator.dedicated pillar='{"bitcurator_user": "<username>"}'
+```
+
+Using the `dedicated` mode/state of the install will include all of the tools and the interface customizations, just as if using the `sudo bitcurator install` command with the CLI. Using the `addon` mode/state will only install just the tools, with no change to theme, colors, or other interface bits. The `<username>` is the user for which you'd like the environment to be configured. This must be an existing user on the system.
+
+**5. Reboot**
+
+When the installation is complete, reboot your system from the terminal:
+
+```shell
+sudo reboot now
+```
+
+and log in with your user credentials.
