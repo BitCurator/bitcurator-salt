@@ -79,8 +79,7 @@ include:
   - bitcurator.packages.libmad0
   - bitcurator.packages.libmagic-dev
   - bitcurator.packages.libmysqlclient-dev
-  - bitcurator.packages.libncurses5-dev
-  - bitcurator.packages.libncursesw5-dev
+  - bitcurator.packages.libncurses-dev
   - bitcurator.packages.libnss-myhostname
   - bitcurator.packages.libparse-win32registry-perl
   - bitcurator.packages.libpthread-stubs0-dev
@@ -118,6 +117,7 @@ include:
   - bitcurator.packages.plymouth-x11
   - bitcurator.packages.python3
   - bitcurator.packages.python3-dev
+  - bitcurator.packages.python3-icu
   - bitcurator.packages.python3-testresources
   - bitcurator.packages.python3-numpy
   - bitcurator.packages.python3-pip
@@ -236,8 +236,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libmad0
       - sls: bitcurator.packages.libmagic-dev
       - sls: bitcurator.packages.libmysqlclient-dev
-      - sls: bitcurator.packages.libncurses5-dev
-      - sls: bitcurator.packages.libncursesw5-dev
+      - sls: bitcurator.packages.libncurses-dev
       - sls: bitcurator.packages.libnss-myhostname
       - sls: bitcurator.packages.libparse-win32registry-perl
       - sls: bitcurator.packages.libpthread-stubs0-dev

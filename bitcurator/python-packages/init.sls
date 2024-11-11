@@ -1,7 +1,6 @@
 include:
   - bitcurator.python-packages.pip
   - bitcurator.python-packages.analyzemft
-  - bitcurator.python-packages.argparse
   - bitcurator.python-packages.bagit
   - bitcurator.python-packages.brunnhilde
   - bitcurator.python-packages.configobj
@@ -9,15 +8,11 @@ include:
   - bitcurator.python-packages.dfxml-python
   - bitcurator.python-packages.docopt
   - bitcurator.python-packages.et_xmlfile
-  - bitcurator.python-packages.fpdf2
   - bitcurator.python-packages.jdcal
-  - bitcurator.python-packages.lxml
   - bitcurator.python-packages.matplotlib
-  - bitcurator.python-packages.openpyxl
   - bitcurator.python-packages.opf-fido
   - bitcurator.python-packages.path
   - bitcurator.python-packages.pefile
-  - bitcurator.python-packages.pyicu
   - bitcurator.python-packages.python-dateutil
   - bitcurator.python-packages.python-evtx
   - bitcurator.python-packages.python-registry
@@ -34,7 +29,6 @@ bitcurator-python-packages:
     - require:
       - sls: bitcurator.python-packages.pip
       - sls: bitcurator.python-packages.analyzemft
-      - sls: bitcurator.python-packages.argparse
       - sls: bitcurator.python-packages.bagit
       - sls: bitcurator.python-packages.brunnhilde
       - sls: bitcurator.python-packages.configobj
@@ -42,15 +36,11 @@ bitcurator-python-packages:
       - sls: bitcurator.python-packages.dfxml-python
       - sls: bitcurator.python-packages.docopt
       - sls: bitcurator.python-packages.et_xmlfile
-      - sls: bitcurator.python-packages.fpdf2
       - sls: bitcurator.python-packages.jdcal
-      - sls: bitcurator.python-packages.lxml
       - sls: bitcurator.python-packages.matplotlib
-      - sls: bitcurator.python-packages.openpyxl
       - sls: bitcurator.python-packages.opf-fido
       - sls: bitcurator.python-packages.path
       - sls: bitcurator.python-packages.pefile
-      - sls: bitcurator.python-packages.pyicu
       - sls: bitcurator.python-packages.python-dateutil
       - sls: bitcurator.python-packages.python-evtx
       - sls: bitcurator.python-packages.python-registry

@@ -10,7 +10,7 @@ libcrypto++8:
 
 {% else %}
 
-libcrypto++8:
+libcrypto++8t64:
   pkg.installed
 
 {% endif %}
