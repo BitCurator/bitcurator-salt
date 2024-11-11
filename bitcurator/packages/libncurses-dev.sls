@@ -1,11 +1,14 @@
 {% if grains['oscodename'] != 'noble' %}
 
-libappindicator1:
+libncurses5-dev:
+  pkg.installed
+
+libncursesw5-dev:
   pkg.installed
 
 {% else %}
 
-libappindicator1 is not available in Noble:
-  test.nop
+libncurses-dev:
+  pkg.installed
 
 {% endif %}

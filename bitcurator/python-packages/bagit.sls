@@ -1,9 +1,28 @@
 include:
-  - bitcurator.packages.python3
+  - bitcurator.packages.python3-virtualenv
+
+bagit-venv:
+  virtualenv.managed:
+    - name: /opt/bagit
+    - venv_bin: /usr/bin/virtualenv
+    - pip_pkgs:
+      - pip>=24.1.3
+      - setuptools>=70.0.0
+      - wheel>=0.38.4
+    - require:
+      - sls: bitcurator.packages.python3-virtualenv
 
 bagit:
   pip.installed:
-    - bin_env: /usr/bin/python3
+    - bin_env: /opt/bagit/bin/python3
     - upgrade: True
     - require:
-      - sls: bitcurator.packages.python3
+      - virtualenv: bagit-venv
+
+bagit-symlink:
+  file.symlink:
+    - name: /usr/local/bin/bagit
+    - target: /opt/bagit/bin/bagit
+    - makedirs: False
+    - require:
+      - pip: bagit

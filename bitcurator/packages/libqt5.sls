@@ -1,11 +1,21 @@
-libqt5core5a:
-  pkg.installed
+{% if grains['oscodename'] != 'noble' %}
 
-libqt5dbus5:
-  pkg.installed
+libqt5-packages-{{ grains['oscodename'] }}:
+  pkg.installed:
+    - names:
+      - libqt5core5a
+      - libqt5dbus5
+      - libqt5gui5
+      - libqt5widgets5
 
-libqt5gui5:
-  pkg.installed
+{% else %}
 
-libqt5widgets5:
-  pkg.installed
+libqt5-packages-noble:
+  pkg.installed:
+    - names:
+      - libqt5core5t64
+      - libqt5dbus5t64
+      - libqt5gui5t64
+      - libqt5widgets5t64
+
+{% endif %}

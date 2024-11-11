@@ -10,7 +10,7 @@ libdvdread8:
 
 {% else %}
 
-libdvdread8
+libdvdread8t64:
   pkg.installed
 
 {% endif %}
