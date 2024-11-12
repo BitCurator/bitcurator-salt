@@ -1,2 +1,3 @@
-python3-tsk:
+xfsprogs:
   pkg.installed
+
