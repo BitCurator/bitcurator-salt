@@ -21,8 +21,8 @@ bagit:
 
 bagit-symlink:
   file.symlink:
-    - name: /usr/local/bin/bagit
-    - target: /opt/bagit/bin/bagit
+    - name: /usr/local/bin/bagit.py
+    - target: /opt/bagit/bin/bagit.py
     - makedirs: False
     - require:
       - pip: bagit
