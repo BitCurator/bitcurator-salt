@@ -9,13 +9,13 @@ This repo includes the SaltStack states and supporting files to install the data
 
 Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quickstart Guide. Pre-configured VMs are also available for some current and past releases.
 
-**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors (including Apple M1-M4 based machines).**
+**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors (including Apple M1 and later machines).**
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
-## Install Ubuntu (24.04 LTS, 22.04LTS, or 20.04LTS)
+## Install Ubuntu (24.04LTS, 22.04LTS, or 20.04LTS)
 
-Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/jammy/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
+Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/noble/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
 
 You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password. This is not recommended for production environments.
 
