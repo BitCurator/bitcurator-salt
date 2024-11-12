@@ -9,7 +9,7 @@
 # License: GPL v3
 #
 # Requires Python >3.0
-# Additional information at http://wiki.bitcurator.net/
+# Additional information at https://bitcurator.github.io/
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -59,12 +59,6 @@ class MounterAppIndicator:
         # create a menu
         self.menu = gtk.Menu()
 
-        # Mounter item
-        #mounter = gtk.MenuItem("Open Mounter...")
-        #mounter.connect("activate", self.mounter_start)
-        #mounter.show()
-        #self.menu.append(mounter)
-
         # Read-only status
         rostatus = gtk.MenuItem.new_with_label("Set USB mount policy READ-ONLY")
         rostatus.connect("activate", self.ro_set)
@@ -72,37 +66,13 @@ class MounterAppIndicator:
         self.menu.append(rostatus)
 
 	# Read-write status
-        #if os.path.isfile("/etc/udev/rules.d/fstab.rules"):
         rwstatus = gtk.MenuItem.new_with_label("Set USB mount policy WRITEABLE")
         rwstatus.connect("activate", self.rw_set)
         rwstatus.show()
         self.menu.append(rwstatus)
 
-	# Quit item
-        #image = gtk.ImageMenuItem(gtk.STOCK_QUIT)
-        #image = gtk.MenuItem("Exit")
-        #image.connect("activate", self.exit_menu)
-        #image.show()
-        #self.menu.append(image)
-
         self.menu.show()
         self.ind.set_menu(self.menu)
-
-##    def mounter_start(self, widget, data=None):
-        #Call mounter Unity app / legacy app here
-        #subprocess.call(["/usr/local/bin/rbfstabGUI.sh"])
-        #win = MounterDialog("Select devices to mount. Devices will be mounted according to the system policy." + "\nCurrently mounted devices will not be changed.\n\n")
-        #win.connect("delete-event", gtk.main_quit)
-        #win.show_all()
-        #response = win.run()
-        #win.destroy()
-
-##        bc_mounter.main()
-
-#        win = bc_mounter.MounterDialog("Select devices to mount. Devices will be mounted according to the system policy." + "\nCurrently mounted devices will not be changed.\n\n")
-#        response = win.run()
-#        win.destroy()
-
 
     def ro_set(self, widget, data=None):
         #Call RO warning indicator here
@@ -112,8 +82,6 @@ class MounterAppIndicator:
                            "Currently mounted volumes on USB devices will not be affected until remounted.")
         else:
             win = PolicyDialog("\nThe USB mount policy is already in the READ-ONLY state." + "\n")
-        #win.connect("delete-event", gtk.main_quit)
-        #win.show_all()
         response = win.run()
         win.destroy()
 
@@ -139,7 +107,6 @@ class MounterAppIndicator:
         else:
             win = PolicyDialog("\nThe USB mount policy is already in the WRITEABLE state." + "\n")
 
-        #win.connect("delete-event", gtk.main_quit)
         response = win.run()
         win.destroy()
 
@@ -156,7 +123,6 @@ class MounterAppIndicator:
             print("Got a CANCEL")
 
     def exit_menu(self, widget, data=None):
-        #gtk.main_quit()
         sys.exit(0)
 
 def main():
