@@ -59,6 +59,7 @@ include:
   - bitcurator.packages.libappindicator3-dev
   - bitcurator.packages.libarchive-dev
   - bitcurator.packages.libavcodec-extra
+  - bitcurator.packages.libbde-utils
   - bitcurator.packages.libboost-dev
   - bitcurator.packages.libboost-filesystem-dev
   - bitcurator.packages.libboost-program-options-dev
@@ -225,13 +226,12 @@ bitcurator-packages:
       - sls: bitcurator.packages.libappindicator3-dev
       - sls: bitcurator.packages.libarchive-dev
       - sls: bitcurator.packages.libavcodec-extra
+      - sls: bitcurator.packages.libbde-utils
       - sls: bitcurator.packages.libboost-dev
       - sls: bitcurator.packages.libboost-filesystem-dev
       - sls: bitcurator.packages.libboost-program-options-dev
       - sls: bitcurator.packages.libboost-system-dev
       - sls: bitcurator.packages.libboost-test-dev
-      - sls: bitcurator.packages.libbde-utils
-      - sls: bitcurator.packages.libbde-utils
       - sls: bitcurator.packages.libbz2-dev
       - sls: bitcurator.packages.libcppunit
       - sls: bitcurator.packages.libcppunit-dev
