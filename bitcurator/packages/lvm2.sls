@@ -1,2 +1,3 @@
-python3-tsk:
+lvm2:
   pkg.installed
+

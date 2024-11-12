@@ -1,2 +1,3 @@
-python3-tsk:
+qemu-utils:
   pkg.installed
+

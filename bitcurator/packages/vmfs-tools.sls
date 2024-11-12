@@ -1,2 +1,3 @@
-python3-tsk:
+vmfs-tools:
   pkg.installed
+

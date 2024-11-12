@@ -1,2 +1,3 @@
-python3-tsk:
+mtd-utils:
   pkg.installed
+
