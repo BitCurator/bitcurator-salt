@@ -6,5 +6,5 @@ with the desired script.
 
 For more information, see the documentation at:
 
-https://confluence.educopia.org/display/BC/Using+Nautilus+for+Data+Triage
+https://bitcurator.github.io/documentation/Tools/
 
