@@ -8,6 +8,7 @@ include:
   - bitcurator.python-packages.dfxml-python
   - bitcurator.python-packages.docopt
   - bitcurator.python-packages.et_xmlfile
+  - bitcurator.python-packages.imagemounter
   - bitcurator.python-packages.jdcal
   - bitcurator.python-packages.matplotlib
   - bitcurator.python-packages.opf-fido
@@ -35,6 +36,7 @@ bitcurator-python-packages:
       - sls: bitcurator.python-packages.dfxml-python
       - sls: bitcurator.python-packages.docopt
       - sls: bitcurator.python-packages.et_xmlfile
+      - sls: bitcurator.python-packages.imagemounter
       - sls: bitcurator.python-packages.jdcal
       - sls: bitcurator.python-packages.matplotlib
       - sls: bitcurator.python-packages.opf-fido
