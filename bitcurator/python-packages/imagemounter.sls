@@ -10,7 +10,7 @@ imagemounter-venv:
       - setuptools>=70.0.0
       - wheel>=0.38.4
       - python-magic>=0.4.27
-      - pytsk>=20231007
+      - pytsk3>=20231007
     - require:
       - sls: bitcurator.packages.python3-virtualenv
 
