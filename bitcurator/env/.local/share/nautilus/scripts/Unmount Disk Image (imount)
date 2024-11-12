@@ -1,0 +1,36 @@
+#!/bin/bash
+ 
+TITLE="Unmount disk image volumes with imagemounter"
+ 
+CONTENT=`( echo "<tt>";
+           echo "IMPORTANT!";
+           echo "\n";
+           echo "Proceeding will unmount ALL disk images and volumes previously";
+           echo "mounted using imagemounter, using the following command:";
+           echo "\n"; 
+           echo "sudo imount --pretty --unmount --mountdir /media";
+           echo "\n"; 
+           echo "Click Proceed to automatically open a terminal where you";
+           echo "will be prompted to confirm or cancel this operation.";
+           echo "\n";
+           echo "Otherwise, click Cancel to do nothing and close this dialog.";
+           echo "</tt>" )`
+zenity --info \
+        --title "Unmount disk image volumes with imagemounter" \
+        --width=640 \
+        --height=480 \
+        --text="$CONTENT" \
+        --ok-label Proceed \
+        --extra-button Cancel
+ 
+rc=$? # OK/Proceed return code 0, any other buttons return code 1
+ 
+case $rc in
+        0)
+                gnome-terminal -x sudo imount --pretty  --unmount --mountdir /media
+                exit 0
+        ;;
+        1)
+                exit 0
+        ;;
+esac

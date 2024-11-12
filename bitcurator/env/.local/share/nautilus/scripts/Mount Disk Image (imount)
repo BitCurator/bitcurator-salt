@@ -1,0 +1,20 @@
+#!/bin/bash
+
+TITLE="Mount Disk Image Volumes with imagemounter"
+
+CONTENT=`( echo "<tt>";
+           echo "Attempting to automatically identify volumes from this image";
+           echo "and mount them in /media with imagemounter using the following command:";
+           echo "\n";
+           echo "sudo imount --no-interactions --pretty --mountdir /media "$@"";
+           echo "\n";
+           sudo imount --no-interaction --pretty --mountdir /media "$@";
+           echo "</tt>" )`
+zenity --info \
+        --title "Mount Disk Image Volumes with imagemounter" \
+        --width=640 \
+        --height=480 \
+        --text="$CONTENT"
+
+exit 0
+

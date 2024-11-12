@@ -7,17 +7,13 @@ from gi.repository import Gtk as gtk
 import subprocess
 import os, sys
 
-#class MounterDialog(gtk.Window):
 class MounterDialog(gtk.Dialog):
 
     def on_cell_toggled(self, widget, index):
         self.liststore[index][0] = not self.liststore[index][0]
-        #print("Cell toggled, on or off")
 
     def __init__(self, dialog_message):
         gtk.Dialog.__init__(self, "BitCurator Mounter", None, 0)
-            #(gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL,
-            # gtk.STOCK_OK, gtk.ResponseType.OK))
 
         self.set_border_width(6)
         self.set_default_size(600, 400)
@@ -29,7 +25,6 @@ class MounterDialog(gtk.Dialog):
         p_blkid = subprocess.Popen(blkid_cmd, stdout=subprocess.PIPE, stderr=None, shell=True)
         #Launch the shell command:
         output = p_blkid.communicate()
-        #print(output[0].decode("utf-8"))
 
         device_list = output[0].decode("utf-8").split('\n')
 
@@ -38,8 +33,6 @@ class MounterDialog(gtk.Dialog):
 
         # Parse the device information for the dialog
         for index, this_dev in enumerate(device_list[0:-1]):
-            # Testing only
-            #print("Got here: " + this_dev + " " + str(index))
 
             # Add raw device point to info list
             info_list[index].append(this_dev)
@@ -49,7 +42,6 @@ class MounterDialog(gtk.Dialog):
             p_fs = subprocess.Popen(fs_cmd, stdout=subprocess.PIPE, stderr=None, shell=True)
             #Launch the shell command:
             output = p_fs.communicate()
-            #print(output[0].decode("utf-8"))
 
             # Add file system type to info list for this device
             info_list[index].append(output[0].decode("utf-8").rstrip('\n'))
@@ -59,7 +51,6 @@ class MounterDialog(gtk.Dialog):
             p_label = subprocess.Popen(label_cmd, stdout=subprocess.PIPE, stderr=None, shell=True)
             #Launch the shell command:
             output = p_label.communicate()
-            #print(output[0].decode("utf-8"))
 
             # Add volume label to info list for this device
             info_list[index].append(output[0].decode("utf-8").rstrip('\n'))
@@ -92,15 +83,12 @@ class MounterDialog(gtk.Dialog):
                 info_list[index].append(mnt_status_list[1])
                 # Check for ro/rw status:
                 if mnt_status_list[3].startswith("ro"):
-                    #print("READ ONLY")
                     # Add read-only mount status to info list for this device
                     info_list[index].append("READ ONLY")
                 if mnt_status_list[3].startswith("rw"):
-                    #print("READ-WRITE")
                     # Add read-only mount status to info list for this device
                     info_list[index].append("WRITEABLE")
 
-        #print(info_list)
         self.liststore = gtk.ListStore(bool, str, str, str, str, str, str)
 
         for dev_info in info_list:
@@ -150,7 +138,6 @@ class MounterDialog(gtk.Dialog):
         self.show_all()
 
     def on_mount_clicked(self, widget):
-        #print("Clicked")
         for dev_info in self.liststore:
             # Check if this device is clicked, not mounted, and not swap
             if dev_info[0] == True and dev_info[5] == "" and dev_info[2] != 'swap':
@@ -159,25 +146,13 @@ class MounterDialog(gtk.Dialog):
                 p_label = subprocess.Popen(mount_cmd, stdout=subprocess.PIPE, stderr=None, shell=True)
                 #Launch the shell command:
                 output = p_label.communicate()
-        #print("Finished mount")
         win.destroy()
-        #sys.exit(0)
 
 def main():
-    #win.show_all()
-    ##win.connect("delete-event", gtk.main_quit)
-    ##gtk.main()
     response = win.run()
-    #print(str(response))
-
-    #if response == gtk.ResponseType.OK:
-    #    print("Got an OK.")
-    #else:
-    #    print("Got a CANCEL.")
     win.destroy()
 
 if __name__ == "__main__":
-    #win = MounterDialog()
     win = MounterDialog("Select devices to mount. Devices will be mounted according to the system policy." + "\nCurrently mounted devices will not be changed.\n\n")
     main()
 
