@@ -6,6 +6,7 @@ include:
   - bitcurator.packages.git
   - bitcurator.packages.python-is-python3
   - bitcurator.python-packages.pip
+  - bitcurator.python-packages.importlib-metadata
 
 bitcurator-python-packages-dfxml:
   pip.installed:
@@ -15,6 +16,7 @@ bitcurator-python-packages-dfxml:
       - sls: bitcurator.packages.git
       - sls: bitcurator.packages.python-is-python3
       - sls: bitcurator.python-packages.pip
+      - sls: bitcurator.python-packages.importlib-metadata
 
 {% else %}
 Noble requires a virtualenv to install dfxml-python via pip:

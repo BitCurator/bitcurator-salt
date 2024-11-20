@@ -13,6 +13,6 @@ set arg1 [lindex $argv 0]
 spawn -noecho bash
 expect "$ "
 send "cd ~/\n"
-send "python3 /usr/local/bin/identify_filenames.py -h\n"
+send "python3 /usr/local/bin/identify-filenames -h\n"
 interact
 exit

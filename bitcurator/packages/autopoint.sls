@@ -1,2 +1,0 @@
-autopoint:
-  pkg.installed

@@ -1,2 +1,2 @@
-autotools-dev:
+ntfs-3g:
   pkg.installed

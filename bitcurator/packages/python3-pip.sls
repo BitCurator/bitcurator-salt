@@ -1,5 +1,5 @@
 include:
-  - .python3
+  - bitcurator.packages.python3
 
 python3-pip:
   pkg.installed:

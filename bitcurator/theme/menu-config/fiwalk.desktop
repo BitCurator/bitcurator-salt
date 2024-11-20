@@ -3,10 +3,10 @@
 [Desktop Entry]
 Type=Application
 Version=0.6.16
-Name=Fiwalk (command line)
+Name=fiwalk
 GenericName=ForensicTool
-Comment=fiwalk command-line tool
+Comment=fiwalk
 Terminal=true
 Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
 Exec=run-fiwalk.sh
-Categories=Additional Tools
+Categories=Forensics and Reporting

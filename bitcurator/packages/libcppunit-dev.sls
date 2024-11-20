@@ -1,2 +1,0 @@
-libcppunit-dev:
-  pkg.installed
