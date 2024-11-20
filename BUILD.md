@@ -1,6 +1,6 @@
 ## Generating a release
 
-These instructions are intended for maintainers generating new releases of the BitCurator environment. For instructions on installing BitCurator, see the main README.
+These instructions are intended for maintainers generating new releases of the BitCurator environment. **For instructions on installing BitCurator, see the main README**.
 
 #### Step 1 - Preparing the work environment
 In the .ci directory of the repo, there is a script called `tag-and-sign.sh`. This script must be updated to contain the proper `VERSION_FILE` value, and the URLs throughout must point to the appropriate repo.
