@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # coding=UTF-8
 #
 # Simple helper script to build SLS files from raw-package-list.txt

@@ -1,0 +1,2 @@
+libguestfs-tools:
+  pkg.installed
