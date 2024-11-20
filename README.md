@@ -5,9 +5,9 @@
 [![GitHub issues](https://img.shields.io/github/issues/bitcurator/bitcurator-salt.svg)](https://github.com/bitcurator/bitcurator-salt/issues)
 [![GitHub forks](https://img.shields.io/github/forks/bitcurator/bitcurator-salt.svg)](https://github.com/bitcurator/bitcurator-salt/network)
 
-This repo includes the SaltStack states and supporting files to install the data analysis, forensics, security tools, and environment modifications that form the BitCurator environment. See details below for how to deploy in a recent Ubuntu LTS release.
+Configuration and support files to build the BitCurator environment in a Ubuntu LTS release. BitCurator provides a dedicated installer and uses [Salt](https://saltproject.io/) automation to create a custom desktop environment that includes archival processing, metadata management, forensic analysis, and security tools.
 
-Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quickstart Guide. Pre-configured VMs are also available for some current and past releases.
+Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quick Start Guide. Or, begin with the instructions in the next section if you are comfortable installing Ubuntu and using command-line tools.
 
 **Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors (including Apple M1 and later machines).**
 
@@ -17,7 +17,7 @@ If you wish to build the environment from scratch on your own physical host or V
 
 Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/noble/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
 
-You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use **BitCurator** for the Full Name, **bcadmin** for the username, and **bcadmin** for the password. This is not recommended for production environments.
+You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use `BitCurator` for the Full Name, `bcadmin` for the username, and `bcadmin` for the password. This is not recommended for production environments.
 
 When installation is completed, reboot, log in, and open a terminal.
 
@@ -71,10 +71,10 @@ Finally, run the BitCurator installer. This may take up to an hour to complete, 
 sudo bitcurator install
 ```
 
-If you encounter an error, you may be able to identify the issue by reviewing saltstack.log file under /var/cache/bitcurator/cli in the subdirectory that matches the BitCurator state-files version you're installing. Search for the log file for result: false messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
+If an error occurs, it may be possible to identify the issue by reviewing `saltstack.log` file under `/var/cache/bitcurator/cli/X.X.X`, where X.X.X is the release version you are installing. Search for the log file for `result: false` messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
 
 ```shell
-grep -i -C 5 'result: false' /var/cache/bitcurator/<version>/cli/saltstack.log or grep -i -B 8 'result: false' /var/cache/bitcurator/<version>/cli/saltstack.log
+grep -i -C 5 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log or grep -i -B 8 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log
 ```
 
 **5. Reboot**
@@ -141,19 +141,19 @@ bitcurator list-upgrades
 
 This repository has been organized to make the process of maintaining and contributing to BitCurator development as transparent as possible. An explanation of the layout follows.
 
-The **.ci** directory contains a selection of shell scripts used to build and test BitCurator releases.
+The `.ci/` directory contains a selection of shell scripts used to build and test BitCurator releases.
 
-The **bitcurator** directory contains all support files and salt states in a number of different directories:
+The `bitcurator/` directory contains all support files and salt states in a number of different directories:
 
-- **config**: Salt states and support files for environment and user configuration
-- **env**: Environment support files and salt states for the user desktop and various tools
-- **files**: Source packages and deb packages for tools where a legacy version is required, or no packaging exists
-- **mounter**: Mount policy tools
-- **packages**: all deb packages (to be installed with apt-get)
-- **python-packages**: all Python 3 packages (to be installed with pip3)
-- **repos**: additional repositories that must be enabled
-- **theme**: BitCurator theme resources
-- **tools**: tools that must be installed from source
+- `config/`: Salt states and support files for environment and user configuration
+- `env/`: Environment support files and salt states for the user desktop and various tools
+- `files/`: Source packages and deb packages for tools where a legacy version is required, or no readily available, stable packaging exists
+- `mounter/`: Mount policy tools
+- `packages/`: all deb packages (to be installed with apt-get)
+- `python-packages/`: all Python 3 packages (to be installed with pip3)
+- `repos/`: additional repositories that must be enabled
+- `theme/`: BitCurator theme resources
+- `tools`/: tools that must be installed from source
 
 ## BitCurator documentation, help, and discussions
 
