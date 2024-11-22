@@ -36,6 +36,7 @@ include:
   - bitcurator.packages.gawk
   - bitcurator.packages.gddrescue
   - bitcurator.packages.ghex
+  - bitcurator.packages.gir-appindicator.sls
   - bitcurator.packages.grsync
   - bitcurator.packages.gtkhash
   - bitcurator.packages.guymager
@@ -50,6 +51,9 @@ include:
   - bitcurator.packages.icedax
   - bitcurator.packages.leptonica-progs
   - bitcurator.packages.libafflib-dev
+  - bitcurator.packages.libappindicator1.sls
+  - bitcurator.packages.libappindicator3-1.sls
+  - bitcurator.packages.libappindicator3-dev.sls
   - bitcurator.packages.libarchive-dev
   - bitcurator.packages.libavcodec-extra
   - bitcurator.packages.libbde-utils
@@ -181,6 +185,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.gawk
       - sls: bitcurator.packages.gddrescue
       - sls: bitcurator.packages.ghex
+      - sls: bitcurator.packages.gir-appindicator.sls
       - sls: bitcurator.packages.grsync
       - sls: bitcurator.packages.gtkhash
       - sls: bitcurator.packages.guymager
@@ -195,6 +200,9 @@ bitcurator-packages:
       - sls: bitcurator.packages.icedax
       - sls: bitcurator.packages.leptonica-progs
       - sls: bitcurator.packages.libafflib-dev
+      - sls: bitcurator.packages.libappindicator1.sls              
+      - sls: bitcurator.packages.libappindicator3-1.sls
+      - sls: bitcurator.packages.libappindicator3-dev.sls
       - sls: bitcurator.packages.libarchive-dev
       - sls: bitcurator.packages.libavcodec-extra
       - sls: bitcurator.packages.libbde-utils
