@@ -23,6 +23,7 @@ opf-fido-symlink:
   file.symlink:
     - name: /usr/local/bin/fido
     - target: /opt/fido/bin/fido
+    - force: True
     - makedirs: False
     - require:
       - pip: opf-fido

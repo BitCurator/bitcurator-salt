@@ -23,6 +23,7 @@ brunnhilde-symlink:
   file.symlink:
     - name: /usr/local/bin/brunnhilde.py
     - target: /opt/brunnhilde/bin/brunnhilde.py
+    - force: True
     - makedirs: False
     - require:
       - pip: brunnhilde

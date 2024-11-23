@@ -23,6 +23,7 @@ bagit-symlink:
   file.symlink:
     - name: /usr/local/bin/bagit.py
     - target: /opt/bagit/bin/bagit.py
+    - force: True
     - makedirs: False
     - require:
       - pip: bagit

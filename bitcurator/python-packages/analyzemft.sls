@@ -28,6 +28,7 @@ analyzemft-symlink:
   file.symlink:
     - name: /usr/local/bin/analyzemft
     - target: /opt/analyzemft/bin/analyzemft
+    - force: True
     - makedirs: False
     - require:
       - pip: analyzemft-install
