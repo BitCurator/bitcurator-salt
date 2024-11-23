@@ -13,7 +13,7 @@ importlib_metadata:
 
 {% else %}
 
-Noble requires a virtualenv to install importlib_metadata:
+Forced version upgrade of importlib_metadata not required for Noble:
   test.nop
 
 {% endif %}

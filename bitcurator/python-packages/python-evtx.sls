@@ -47,6 +47,7 @@ bitcurator-python-package-python-evtx-symlink-{{ file }}:
   file.symlink:
     - name: /usr/local/bin/{{ file }}
     - target: /opt/python-evtx/bin/{{ file }}
+    - force: True
     - makedirs: False
     - require:
       - pip: bitcurator-python-package-python-evtx

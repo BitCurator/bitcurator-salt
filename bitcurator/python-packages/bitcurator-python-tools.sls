@@ -38,6 +38,7 @@ bitcurator-python-tools-symlink-{{ file }}:
   file.symlink:
     - name: /usr/local/bin/{{ file }}
     - target: /opt/bitcurator-python-tools/bin/{{ file }}
+    - force: True
     - makedirs: False
     - require:
       - pip: bitcurator-python-tools-install

@@ -66,6 +66,7 @@ imagemounter-symlink:
   file.symlink:
     - name: /usr/local/bin/imount
     - target: /opt/imagemounter/bin/imount
+    - force: True
     - makedirs: False
     - require:
       - pip: imagemounter
