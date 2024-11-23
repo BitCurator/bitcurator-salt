@@ -44,7 +44,7 @@ echo "==> Generating Cast release"
 cast release -l debug --rm-dist
 
 echo "==> Getting GitHub Release"
-RELEASE_ID=`curl -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitcurator/bitcurator-salt/releases | jq -r '.[] | select(.tag_name == "${TAG_NAME}") | .id'`
+RELEASE_ID=`curl -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" -q https://api.github.com/repos/bitcurator/bitcurator-salt/releases | jq -r '.[] | select(.tag_name == \"$TAG_NAME\") | .id'`
 
 echo "==> Downloading tar.gz file for tag from GitHub"
 curl -qL -o /tmp/bitcurator-salt-${TAG_NAME}.tar.gz https://github.com/bitcurator/bitcurator-salt/archive/$TAG_NAME.tar.gz
