@@ -1,6 +1,9 @@
 {% set version = "0.3.1" %}
 {% set hash = 'a1df480582468dfded74119e27573da9e7fa6ef7ecbc6dbd814cdcdfc845dadc' %}
 
+include:
+  - bitcurator.packages.libfuse-dev
+
 bulk-reviewer-download:
   file.managed:
     - name: /usr/share/bulk-reviewer/BulkReviewer-{{ version }}.AppImage
@@ -8,6 +11,8 @@ bulk-reviewer-download:
     - source_hash: sha256={{ hash }}
     - makedirs: True
     - mode: 755
+    - require:
+      - sls: bitcurator.packages.libfuse-dev
 
 bulk-reviewer-wrapper:
   file.managed:
@@ -15,7 +20,7 @@ bulk-reviewer-wrapper:
     - mode: 755
     - contents:
       - '#!/bin/bash'
-      - /usr/share/bulk-reviewer/BulkReviewer-{{ version }}.AppImage &
+      - '/usr/share/bulk-reviewer/BulkReviewer-{{ version }}.AppImage --no-sandbox &'
     - require:
       - file: bulk-reviewer-download
 
