@@ -27,8 +27,6 @@ fi
 
 STASH_RESULTS=`git stash -u`
 
-echo "==> Getting GitHub Release"
-RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/bitcurator/bitcurator-salt/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE}" | jq .id`
 
 echo "==> Generating tag ${TAG_NAME} and pushing"
 git tag $TAG_NAME && git push origin --tags
@@ -44,6 +42,9 @@ git pull
 
 echo "==> Generating Cast release"
 cast release -l debug --rm-dist
+
+echo "==> Getting GitHub Release"
+RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/bitcurator/bitcurator-salt/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE}" | jq .id`
 
 echo "==> Downloading tar.gz file for tag from GitHub"
 curl -qL -o /tmp/bitcurator-salt-${TAG_NAME}.tar.gz https://github.com/bitcurator/bitcurator-salt/archive/$TAG_NAME.tar.gz
