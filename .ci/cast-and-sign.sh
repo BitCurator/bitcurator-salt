@@ -25,8 +25,16 @@ if [ $? -eq 0 ]; then
   PRERELEASE="true"
 fi
 
+STASH_RESULTS=`git stash -u`
+
+echo "==> Getting GitHub Release"
+RELEASE_ID=`curl -XPOST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -q https://api.github.com/repos/bitcurator/bitcurator-salt/releases -d "{\"tag_name\": \"$TAG_NAME\", \"prerelease\": $PRERELEASE}" | jq .id`
+
 echo "==> Generating tag ${TAG_NAME} and pushing"
 git tag $TAG_NAME && git push origin --tags
+
+echo "==> Sleeping, waiting for tar.gz file to be generated"
+sleep 3
 
 echo "==> Changing to main branch"
 git checkout main
