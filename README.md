@@ -25,7 +25,7 @@ When installation is completed, reboot, log in, and open a terminal.
 
 **1. Prepare your environment**
 
-To ensure you have all of the tools, and updates necessary for the BitCurator environment to succeed, you should update the local `apt` repository and install the necessary tools:
+To ensure you have all tools and updates necessary for the BitCurator environment to install correctly, update the local `apt` repository and install some required tools:
 
 ```shell
 sudo apt-get update && sudo apt-get upgrade -y
@@ -89,7 +89,9 @@ After reboot, log in using the credentials your provided earlier. (If you select
 
 ## Updating and Upgrading
 
-Once BitCurator is installed, you may install additional software and update the Ubuntu OS as normal, either from the Software Center or with `sudo apt-get update && sudo apt-get upgrade` on the command line. We recommend that you decline LTS-to-LTS upgrades (for example, Ubuntu 22.04LTS to 24.04LTS) and perform a clean install when moving to a new LTS.
+Once BitCurator is installed, you may install additional software and update the Ubuntu OS as normal, either from the Software Center or with `sudo apt-get update && sudo apt-get upgrade` on the command line. 
+
+We recommend that you decline LTS-to-LTS upgrades (for example, a pop-up notice in Ubuntu 22.04LTS announcing that 24.04LTS is available) and perform a clean install when moving to a new LTS.
 
 The BitCurator CLI tool may also be used to selectively upgrade those packages specifically associated with the BitCurator environment, and to upgrade the BitCurator verion. To see all options for the BitCurator CLI, type the following in a terminal:
 
