@@ -28,12 +28,22 @@ bitcurator-package-lightgrep-git:
     - require:
       - sls: bitcurator.packages.git
 
+bitcurator-package-lightgrep-modify-example:
+  file.replace:
+    - name: '/usr/local/src/lightgrep/examples/c_example/main.c'
+    - pattern: {{ 'int main(int, char**) {' | regex_escape }}
+    - repl: 'int main(int argv, char** argc) {\n  (void)argv;\n  (void)argc;\n'
+    - count: 1
+    - prepend_if_not_found: False
+    - require:
+      - git: bitcurator-package-lightgrep-git
+
 bitcurator-package-lightgrep-build:
   cmd.run:
     - names:
       - autoreconf -fi
       - ./configure
-      - make -j4
+      - make -j8
       - make install
       - ldconfig
     - cwd: /usr/local/src/lightgrep
