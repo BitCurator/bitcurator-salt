@@ -90,6 +90,7 @@ include:
   - bitcurator.packages.libvte9
   - bitcurator.packages.libxml2-dev
   - bitcurator.packages.libxslt1-dev
+  - bitcurator.packages.lightgrep
   - bitcurator.packages.linux-headers-generic
   - bitcurator.packages.lvm2
   - bitcurator.packages.mate-utils
@@ -239,6 +240,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libvte9
       - sls: bitcurator.packages.libxml2-dev
       - sls: bitcurator.packages.libxslt1-dev
+      - sls: bitcurator.packages.lightgrep
       - sls: bitcurator.packages.linux-headers-generic
       - sls: bitcurator.packages.lvm2
       - sls: bitcurator.packages.mate-utils
