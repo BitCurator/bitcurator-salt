@@ -1,8 +1,4 @@
-{% if grains['oscodename'] == 'focal' %}
-  {% set be_rev = 'v2.0.0' %}
-{% else %}
-  {% set be_rev = 'v2.1.1' %}
-{% endif %}
+{% set be_rev = 'v2.1.1' %}
 
 include:
   - bitcurator.packages.build-essential

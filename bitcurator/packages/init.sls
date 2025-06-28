@@ -1,11 +1,9 @@
 include:
   - bitcurator.packages.xmount
   - bitcurator.packages.antiword
-  - bitcurator.packages.aufs-tools
   - bitcurator.packages.avfs
   - bitcurator.packages.bchunk
   - bitcurator.packages.bison
-  - bitcurator.packages.bless
   - bitcurator.packages.brasero
   - bitcurator.packages.bulk-reviewer
   - bitcurator.packages.ccrypt
@@ -25,6 +23,7 @@ include:
   - bitcurator.packages.disktype
   - bitcurator.packages.dkms
   - bitcurator.packages.docker
+  - bitcurator.packages.dvdisaster
   - bitcurator.packages.equivs
   - bitcurator.packages.ewf-tools
   - bitcurator.packages.expat
@@ -32,11 +31,11 @@ include:
   - bitcurator.packages.fdutils
   - bitcurator.packages.ffmpeg
   - bitcurator.packages.g++
-  - bitcurator.packages.gadmin-rsync
   - bitcurator.packages.gawk
   - bitcurator.packages.gddrescue
   - bitcurator.packages.ghex
   - bitcurator.packages.gir-appindicator
+  - bitcurator.packages.gparted
   - bitcurator.packages.grsync
   - bitcurator.packages.gtkhash
   - bitcurator.packages.guymager
@@ -92,6 +91,7 @@ include:
   - bitcurator.packages.libxslt1-dev
   - bitcurator.packages.lightgrep
   - bitcurator.packages.linux-headers-generic
+  - bitcurator.packages.lnav
   - bitcurator.packages.lvm2
   - bitcurator.packages.mate-utils
   - bitcurator.packages.mediainfo
@@ -151,11 +151,9 @@ bitcurator-packages:
     - require:
       - sls: bitcurator.packages.xmount
       - sls: bitcurator.packages.antiword
-      - sls: bitcurator.packages.aufs-tools
       - sls: bitcurator.packages.avfs
       - sls: bitcurator.packages.bchunk
       - sls: bitcurator.packages.bison
-      - sls: bitcurator.packages.bless
       - sls: bitcurator.packages.brasero
       - sls: bitcurator.packages.bulk-reviewer
       - sls: bitcurator.packages.ccrypt
@@ -175,6 +173,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.disktype
       - sls: bitcurator.packages.dkms
       - sls: bitcurator.packages.docker
+      - sls: bitcurator.packages.dvdisaster
       - sls: bitcurator.packages.equivs
       - sls: bitcurator.packages.ewf-tools
       - sls: bitcurator.packages.expat
@@ -182,11 +181,11 @@ bitcurator-packages:
       - sls: bitcurator.packages.fdutils
       - sls: bitcurator.packages.ffmpeg
       - sls: bitcurator.packages.g++
-      - sls: bitcurator.packages.gadmin-rsync
       - sls: bitcurator.packages.gawk
       - sls: bitcurator.packages.gddrescue
       - sls: bitcurator.packages.ghex
       - sls: bitcurator.packages.gir-appindicator
+      - sls: bitcurator.packages.gparted
       - sls: bitcurator.packages.grsync
       - sls: bitcurator.packages.gtkhash
       - sls: bitcurator.packages.guymager
@@ -242,6 +241,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.libxslt1-dev
       - sls: bitcurator.packages.lightgrep
       - sls: bitcurator.packages.linux-headers-generic
+      - sls: bitcurator.packages.lnav
       - sls: bitcurator.packages.lvm2
       - sls: bitcurator.packages.mate-utils
       - sls: bitcurator.packages.mediainfo

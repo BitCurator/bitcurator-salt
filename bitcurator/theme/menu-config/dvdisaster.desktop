@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=0.79.10
+Name=dvdisaster (command line)
+GenericName=ImagingTool
+Comment=dvdisaster command-line tool
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-dvdisaster.sh
+Categories=Imaging and Recovery
+

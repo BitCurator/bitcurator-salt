@@ -1,4 +1,4 @@
-{% if grains['oscodename'] != 'noble' %}
+{% if grains['oscodename'] == 'jammy' %}
 
 libvte9:
   pkg.installed

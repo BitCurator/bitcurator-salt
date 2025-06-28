@@ -1,0 +1,13 @@
+!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=0.11.2
+Name=lnav
+GenericName=ForensicTool
+Comment=Logfile Navigator
+Terminal=true
+Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Exec=run-lnav.sh
+Categories=Additional Tools
+

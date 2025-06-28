@@ -9,13 +9,13 @@ Configuration and support files to build the BitCurator environment in a Ubuntu 
 
 Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quick Start Guide. Or, begin with the instructions in the next section if you are comfortable installing Ubuntu and using command-line tools.
 
-**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors (including Apple M1 and later machines).**
+**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors, including Apple silicon (M1-M4 series).**
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
-## Install Ubuntu (24.04LTS, 22.04LTS, or 20.04LTS)
+## Install Ubuntu (24.04LTS, 22.04LTS)
 
-Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/noble/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use previous LTS releases of Ubuntu (22.04LTS or 20.04LTS) if needed.
+Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/noble/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use the previous LTS release of Ubuntu, 22.04LTS, if needed.
 
 You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use `BitCurator` for the Full Name, `bcadmin` for the username, and `bcadmin` for the password. This is not recommended for production environments.
 
@@ -127,10 +127,10 @@ To update the packages and compiled tools specific to the BitCurator environment
 sudo bitcurator update
 ```
 
-To upgrade the BitCurator environment to a new release, use the upgrade option. For example, if you are on release 4.4.0 and wish to upgrade to 4.5.0, the following command would be used:
+To upgrade the BitCurator environment to a new release, use the upgrade option. For example, if you were using release 5.0.0 and wished to upgrade to 5.1.0, the following command would be used:
 
 ```shell
-sudo bitcurator upgrade 4.5.0
+sudo bitcurator upgrade 5.1.0
 ```
 
 To see a list of available upgrades, type:
