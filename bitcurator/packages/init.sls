@@ -101,7 +101,6 @@ include:
   - bitcurator.packages.mtd-utils
   - bitcurator.packages.mysql-client
   - bitcurator.packages.nwipe
-  - bitcurator.packages.openjdk-8-jdk
   - bitcurator.packages.openssh
   - bitcurator.packages.plymouth-themes
   - bitcurator.packages.plymouth-x11
@@ -251,7 +250,6 @@ bitcurator-packages:
       - sls: bitcurator.packages.mtd-utils
       - sls: bitcurator.packages.mysql-client
       - sls: bitcurator.packages.nwipe
-      - sls: bitcurator.packages.openjdk-8-jdk
       - sls: bitcurator.packages.openssh
       - sls: bitcurator.packages.plymouth-themes
       - sls: bitcurator.packages.plymouth-x11

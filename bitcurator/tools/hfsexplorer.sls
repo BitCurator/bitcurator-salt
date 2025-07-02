@@ -2,7 +2,7 @@
 {% set hash = '1dfc2183ebcd5f4ca283def3d3a0061542bdbf43d62a1c35208a4b95bf2b9d8e' %}
 
 include:
-  - bitcurator.packages.openjdk-8-jdk
+  - bitcurator.packages.openjdk-adoptium
 
 hfsexplorer-download:
   file.managed:
@@ -25,9 +25,9 @@ hfsexplorer-wrapper:
     - mode: 755
     - contents:
       - '#!/bin/bash'
-      - /usr/share/hfsexplorer/bin/hfsexplorer "$@"
+      - /usr/share/hfsexplorer/bin/hfsexplorer "$@" &
     - require:
-      - sls: bitcurator.packages.openjdk-8-jdk
+      - sls: bitcurator.packages.openjdk-adoptium
 
 hfsexplorer-cleanup:
   file.absent:
