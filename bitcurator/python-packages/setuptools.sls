@@ -10,9 +10,5 @@ setuptools:
     - require:
       - sls: bitcurator.python-packages.pip
 
-{% else %}
-Noble requires a virtualenv to install setuptools via pip:
-  test.nop
-
 {% endif %}
 

@@ -10,8 +10,4 @@ wheel:
     - require:
       - sls: bitcurator.python-packages.pip
 
-{% else %}
-Noble requires a virtualenv to install wheel via pip:
-  test.nop
-
 {% endif %}

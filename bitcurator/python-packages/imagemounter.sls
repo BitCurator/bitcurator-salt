@@ -30,6 +30,7 @@ imagemounter-venv:
       - pip>=24.1.3
       - setuptools>=70.0.0
       - wheel>=0.38.4
+      - importlib-metadata>=8.0.0
       - python-magic>=0.4.27
       - pytsk3>=20231007
     - require:

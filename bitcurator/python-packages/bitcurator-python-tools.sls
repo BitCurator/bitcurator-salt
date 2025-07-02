@@ -12,6 +12,7 @@ bitcurator-python-tools-venv:
       - pip>=24.1.3
       - setuptools>=70.0.0
       - wheel>=0.38.4
+      - importlib-metadata>=8.0.0
     - require:
       - sls: bitcurator.packages.python3-virtualenv
 
