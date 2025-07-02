@@ -10,4 +10,7 @@ wheel:
     - require:
       - sls: bitcurator.python-packages.pip
 
+{% else %}
+Wheel installation via pip not required for Noble:
+  test.nop
 {% endif %}

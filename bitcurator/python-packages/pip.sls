@@ -11,4 +11,8 @@ bitcurator-python-packages-pip3:
     - require:
       - sls: bitcurator.packages.python3-pip
 
+{% else %}
+Pip installation via pip not required for Noble:
+  test.nop
+
 {% endif %}

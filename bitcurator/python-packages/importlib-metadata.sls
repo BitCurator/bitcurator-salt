@@ -11,4 +11,7 @@ importlib_metadata:
     - require:
       - sls: bitcurator.python-packages.pip
 
+{% else %}
+Importlib-metadata installation via pip not required for Noble:
+  test.nop
 {% endif %}
