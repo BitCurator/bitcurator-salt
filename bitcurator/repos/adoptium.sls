@@ -1,3 +1,14 @@
+openjdk-repo:
+  pkgrepo.absent:
+    - ppa: openjdk-r/ppa
+    - refresh: True
+
+openjdk-repo-file-delete:
+  file.absent:
+    - name: /etc/apt/sources.list.d/openjdk-r-ubuntu-ppa-{{ grains['oscodename'] }}.sources
+    - require:
+      - pkgrepo: openjdk-repo
+
 adoptium-repo-key:
   file.managed:
     - name: /usr/share/keyrings/adoptium.pgp
@@ -13,3 +24,5 @@ adoptium-repo:
     - refresh: True
     - require:
       - file: adoptium-repo-key
+      - pkgrepo: openjdk-repo
+      - file: openjdk-repo-file-delete

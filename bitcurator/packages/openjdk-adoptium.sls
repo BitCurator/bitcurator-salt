@@ -10,6 +10,9 @@
 include:
   - bitcurator.repos.adoptium
 
+openjdk-8-jdk:
+  pkg.removed
+
 openjdk-adoptium:
   pkg.installed:
     - name: temurin-21-jdk
