@@ -12,8 +12,6 @@ importlib_metadata:
       - sls: bitcurator.python-packages.pip
 
 {% else %}
-
-Forced version upgrade of importlib_metadata not required for Noble:
+Importlib-metadata installation via pip not required for Noble:
   test.nop
-
 {% endif %}

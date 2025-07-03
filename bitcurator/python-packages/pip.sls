@@ -12,7 +12,7 @@ bitcurator-python-packages-pip3:
       - sls: bitcurator.packages.python3-pip
 
 {% else %}
-Noble requires virtualenvs for python3 package management:
+Pip installation via pip not required for Noble:
   test.nop
 
 {% endif %}
