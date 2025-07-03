@@ -4,11 +4,11 @@
 # Category: Archival
 # Author: Open Preservation Foundation
 # License: GNU Lesser Public License v2.1 (https://github.com/openpreserve/jhove/blob/integration/LICENSE)
-# Version: 1.32.1
+# Version: 1.34.0
 # Notes: Packaged separately for silent unattended installation
 
-{% set version = '1.32.1' %}
-{% set hash = '92c9f95df20b85ae604b61471846d66538482b1671969ec113e3abd75b03b1cd' %}
+{% set version = '1.34.0' %}
+{% set hash = '8652ddd84a65ab449e872f2baef7acb4c2a2212268c657788d0257b85b645498' %}
 
 include:
   - bitcurator.packages.openjdk-adoptium
