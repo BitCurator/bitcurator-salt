@@ -11,7 +11,7 @@ Additionally, throughout you will see that `gpg --armor` is used to sign the rel
 The remainder of the scripts in this directory are all for testing salt-states, so it would be good to customize those as well, including generating your own docker environment for testing (which is how these scripts are used).
 
 Finally, you will need to add your GitHub Access Token to the environment. The easiest way to do this would be to put it in your `~/.bashrc` file and then `source ~/.bashrc`. However, you can customize the `tag-and-sign.sh` script as you wish if you decide you'd rather pass it manually as an argument.
-Or you can just `export GITHUB_ACCESS_TOKEN=<token>` then unset it after you're done.
+Or you can just `export GITHUB_ACCESS_TOKEN=<token>` then unset it after you're done. For the `cast-and-sign.sh` script, you will need to set `export GITHUB_TOKEN=<token>`. Note: For `cast-and-sign.sh` use you must also `export COSIGN_PASSWORD=<pw>` even if no password is set for the key.
 
 #### Step 2a - Preparing to generate the release
 
@@ -29,7 +29,7 @@ Next follow Step 2a OR Step 2b.
 
 #### Step 2a - Generating the release (Cast + bitcurator-cli compatibility)
 
-Once your push is complete, go to the root of your repo folder and run:
+Once your push is complete, go to the root of your repo folder. Copy `cosign.key` into this folder from your local store and run:
 `$ ./.ci/cast-and-sign.sh <version>` where `<version>` is the version number you added in the `VERSION` file, and wish to create a tag for.
 
 #### Step 2b - Generating the release (Legacy, bitcurator-cli compatibility only)
