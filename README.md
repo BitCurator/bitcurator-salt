@@ -41,7 +41,7 @@ sudo apt-get install gnupg curl git -y
 BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
 
 ```shell
-wget https://github.com/BitCurator/bitcurator-cli/releases/download/v2.0.0/bitcurator-cli-linux
+wget https://github.com/BitCurator/bitcurator-cli/releases/download/v3.0.0/bitcurator-cli-linux
 ```
 
 Generate a SHA-256 hash of the downloaded file:
@@ -50,10 +50,10 @@ Generate a SHA-256 hash of the downloaded file:
 sha256sum bitcurator-cli-linux
 ```
 
-and verify that the hash of this version (current release: v2.0.0) matches the value below:
+and verify that the hash of this version (current release: v3.0.0) matches the value below:
 
 ```shell
-f739a25e8a0a5648aacce5792ee0c4b8d24044947b7c6d75c010f28251846c21
+ec1c484227bb5aa61ec0881201daf63d38cf6a412a240d90015b33d8e9bf71c0
 ```
 
 Move and rename the BitCurator installer, and set it as executable:
@@ -104,10 +104,11 @@ This will print a list showing the following options:
 ```shell
 $ bitcurator --help
 Usage:
+Usage:
   bitcurator [options] list-upgrades [--pre-release]
   bitcurator [options] install [--pre-release] [--version=<version>] [--mode=<mode>] [--user=<user>]
-  bitcurator [options] update
   bitcurator [options] upgrade [--pre-release] [--mode=<mode>] [--user=<user>]
+  bitcurator [options] results [--version=<version>]
   bitcurator [options] version
   bitcurator [options] debug
   bitcurator -h | --help | -v
@@ -119,12 +120,6 @@ Options:
   --user=<user>         User used for bitcurator configuration [default: kamwoods]
   --no-cache            Ignore the cache, always download the release files
   --verbose             Display verbose logging
-```
-
-To update the packages and compiled tools specific to the BitCurator environment, enter the command:
-
-```shell
-sudo bitcurator update
 ```
 
 To upgrade the BitCurator environment to a new release, use the upgrade option. For example, if you were using release 5.0.0 and wished to upgrade to 5.1.0, the following command would be used:
