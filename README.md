@@ -7,7 +7,7 @@
 
 Configuration and support files to build the BitCurator environment in a Ubuntu LTS release. BitCurator provides a dedicated installer and uses [Salt](https://saltproject.io/) automation to create a custom desktop environment that includes archival processing, metadata management, forensic analysis, and security tools.
 
-Visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases to view the Quick Start Guide. Or, begin with the instructions in the next section if you are comfortable installing Ubuntu and using command-line tools.
+Instructions in the next section provide guidance on installing Ubuntu and using command-line tools to deploy BitCurator. If you are unfamiliar with commnad-line tools or need additional help installing Ubuntu on dedicated hardware or as a virtual machine, visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases and click on the link to the Quick Start Guide.
 
 **Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors, including Apple silicon (M1-M4 series).**
 
