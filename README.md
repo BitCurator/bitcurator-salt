@@ -71,11 +71,7 @@ Finally, run the BitCurator installer. This may take up to an hour to complete, 
 sudo bitcurator install
 ```
 
-If an error occurs, it may be possible to identify the issue by reviewing `saltstack.log` file under `/var/cache/bitcurator/cli/X.X.X`, where X.X.X is the release version you are installing. Search for the log file for `result: false` messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
-
-```shell
-grep -i -C 5 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log or grep -i -B 8 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log
-```
+If no errors have occurred, you are ready to move on to step 5 below. If you see a message that includes "Incomplete due to failures", one or more packages may have failed to install. Often this message is caused by an install failure for a single tool (or small subset of tools), and the BitCurator environment will otherwise still be usable after reboot. To identify the problem and report it, follow the steps in "What to do if you encounter an error" below.
 
 **5. Reboot**
 
@@ -86,6 +82,22 @@ sudo reboot now
 ```
 
 After reboot, log in using the credentials your provided earlier. (If you selected Automatic Login during the Ubuntu install, you will reboot directly to the desktop).
+
+**What to do if you encounter an error**
+
+The ``bitcurator`` installer includes a ``results`` option that can assist in isolating packages that have failed to install. If you see an installation failure message, run the following command:
+
+```shell
+sudo bitcurator results --version=X.X.X
+```
+
+where X.X.X is the number of the BitCurator release you have just installed (for example, 5.1.0). Creating a new issue in this GitHub repository (bitcurator-salt) and posting the output of this command is often the quickest way to get help and let us know something may need fixing.
+
+For the more adventurous, it may be possible to identify the issue by reviewing `saltstack.log` file under `/var/cache/bitcurator/cli/X.X.X`, where X.X.X is the release version you are installing. Search for the log file for `result: false` messages and look at the surrounding 5 lines or the 8 lines above each message to see the state file that caused the issue. You can do this with:
+
+```shell
+grep -i -C 5 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log or grep -i -B 8 'result: false' /var/cache/bitcurator/cli/<version>/saltstack.log
+```
 
 ## Updating and Upgrading
 
