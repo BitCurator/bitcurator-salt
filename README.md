@@ -17,7 +17,7 @@ If you wish to build the environment from scratch on your own physical host or V
 
 Download the most recent 64-bit Ubuntu 24.04 Desktop image from https://releases.ubuntu.com/noble/ and install on your local machine or in a VM. If you're using a VM, we recommend allocating a minimum of 8GB of RAM and 64GB of disk space to the instance. You may alternatively use the previous LTS release of Ubuntu, 22.04LTS, if needed.
 
-You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use `BitCurator` for the Full Name, `bcadmin` for the username, and `bcadmin` for the password. This is not recommended for production environments.
+You may use any hostname, username, and password. If you wish to replicate the default configuration in the BitCurator documentation, when prompted use `BitCurator` for the Full Name and `bcadmin` for the username. Create a password of your choice, and memorize or record it in a secure location. Logging into the system, command-line instructions beginning with `sudo`, and some system tools will require you to re-enter this password.
 
 When installation is completed, reboot, log in, and open a terminal.
 
