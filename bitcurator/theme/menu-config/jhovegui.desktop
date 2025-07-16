@@ -8,7 +8,7 @@ Version=1.34
 Name=JHOVE (GUI)
 GenericName=jhovegui
 Comment=JHOVE GUI
-Icon=/usr/share/icons/bitcurator/jhovegui.svg
+Icon=/usr/share/icons/bitcurator/jhovelogo.svg
 Exec=/usr/local/bin/jhove-gui
 Terminal=false
 # Categorie entry according to version 1.0 of
