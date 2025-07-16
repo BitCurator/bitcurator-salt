@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Version=1.34
+Name=JHOVE (CLI)
+GenericName=jhovecli
+Comment=JHOVE command-line
+Terminal=true
+Icon=/usr/share/icons/bitcurator/jhovelogo.svg
+Exec=run-jhovecli.sh
+Categories=Additional Tools
