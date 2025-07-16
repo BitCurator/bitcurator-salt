@@ -1,0 +1,17 @@
+[Desktop Entry]
+# JHOVE GUI
+# The format of this file is specified at
+# http://freedesktop.org/Standards/desktop-entry-spec
+# The entries are in the order they are listed in version 1.0
+Type=Application
+Version=1.34
+Name=JHOVE (GUI)
+GenericName=jhovegui
+Comment=JHOVE GUI
+Icon=/usr/share/icons/bitcurator/jhovegui.svg
+Exec=/usr/local/bin/jhove-gui
+Terminal=false
+# Categorie entry according to version 1.0 of
+# http://www.freedesktop.org/wiki/Specifications/menu-spec
+Categories=Additional Tools
+
