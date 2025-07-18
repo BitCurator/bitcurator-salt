@@ -25,7 +25,7 @@ When installation is completed, reboot, log in, and open a terminal.
 
 **1. Prepare your environment**
 
-To ensure you have all tools and updates necessary for the BitCurator environment to install correctly, update the local `apt` repository and install some required tools:
+Update the local `apt` repository and install some required tools:
 
 ```shell
 sudo apt-get update && sudo apt-get upgrade -y
@@ -38,7 +38,7 @@ sudo apt-get install gnupg curl git -y
 
 **2. Download the BitCurator CLI installer**
 
-BitCurator uses a standalone command-line tool for installation and upgrade. First, download the latest release of the tool with the following command:
+BitCurator uses a command-line tool for installation and upgrade. Download the latest release of the tool with the following command:
 
 ```shell
 wget https://github.com/BitCurator/bitcurator-cli/releases/download/v3.0.0/bitcurator-cli-linux
@@ -50,13 +50,13 @@ Generate a SHA-256 hash of the downloaded file:
 sha256sum bitcurator-cli-linux
 ```
 
-and verify that the hash of this version (current release: v3.0.0) matches the value below:
+and use the output to confirm that the hash of this version (current release: v3.0.0) matches the value below:
 
 ```shell
 ec1c484227bb5aa61ec0881201daf63d38cf6a412a240d90015b33d8e9bf71c0
 ```
 
-Move and rename the BitCurator installer, and set it as executable:
+Move and rename the BitCurator installer, and make it executable:
 
 ```shell
 sudo mv bitcurator-cli-linux /usr/local/bin/bitcurator
@@ -65,13 +65,13 @@ sudo chmod +x /usr/local/bin/bitcurator
 
 **3. Run the BitCurator CLI Installer**
 
-Finally, run the BitCurator installer. This may take up to an hour to complete, depending on your internet speed and system:
+Now run the BitCurator installer. This may take up to an hour to complete, depending on your internet speed and system:
 
 ```shell
 sudo bitcurator install
 ```
 
-If no errors have occurred, you are ready to move on to step 5 below. If you see a message that includes "Incomplete due to failures", one or more packages may have failed to install. Often this message is caused by an install failure for a single tool (or small subset of tools), and the BitCurator environment will otherwise still be usable after reboot. To identify the problem and report it, follow the steps in "What to do if you encounter an error" below.
+If no errors have occurred, move on to step 5 below. If you see a message that includes "Incomplete due to failures", one or more packages may have failed to install. This message is usually the result of an install failure for a single tool (or small subset of tools), and the BitCurator environment will still be usable after reboot. To identify the problem and report it, follow the steps in "What to do if you encounter an error" below.
 
 **5. Reboot**
 
