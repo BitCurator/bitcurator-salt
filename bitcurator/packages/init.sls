@@ -8,6 +8,7 @@ include:
   - bitcurator.packages.bulk-reviewer
   - bitcurator.packages.ccrypt
   - bitcurator.packages.cdrdao
+  - bitcurator.packages.cifs-utils
   - bitcurator.packages.clamav
   - bitcurator.packages.clamav-daemon
   - bitcurator.packages.clamtk
@@ -157,6 +158,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.bulk-reviewer
       - sls: bitcurator.packages.ccrypt
       - sls: bitcurator.packages.cdrdao
+      - sls: bitcurator.packages.cifs-utils
       - sls: bitcurator.packages.clamav
       - sls: bitcurator.packages.clamav-daemon
       - sls: bitcurator.packages.clamtk
