@@ -103,6 +103,7 @@ include:
   - bitcurator.packages.mysql-client
   - bitcurator.packages.nwipe
   - bitcurator.packages.openssh
+  - bitcurator.packages.pcre2-utils
   - bitcurator.packages.plymouth-themes
   - bitcurator.packages.plymouth-x11
   - bitcurator.packages.python3
@@ -253,6 +254,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.mysql-client
       - sls: bitcurator.packages.nwipe
       - sls: bitcurator.packages.openssh
+      - sls: bitcurator.packages.pcre2-utils
       - sls: bitcurator.packages.plymouth-themes
       - sls: bitcurator.packages.plymouth-x11
       - sls: bitcurator.packages.python3
