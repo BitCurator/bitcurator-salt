@@ -1,16 +1,11 @@
-{% if grains['oscodename'] == 'jammy' %}
+{% set codename = grains['oscodename'] %}
 
-libdvdread8:
-  pkg.installed
+{% set libdvdread_pkgs = {
+     'jammy':    ['libdvdread8'],
+     'noble':    ['libdvdread8t64'],
+     'resolute': ['libdvdread8t64'],
+   }.get(codename, ['libdvdread8t64']) %}
 
-{% elif grains['oscodename'] == 'noble' %}
-
-libdvdread8t64:
-  pkg.installed
-
-{% else %}
-
-libdvdread8t64:
-  pkg.installed
-
-{% endif %}
+libdvdread-packages:
+  pkg.installed:
+    - pkgs: {{ libdvdread_pkgs }}

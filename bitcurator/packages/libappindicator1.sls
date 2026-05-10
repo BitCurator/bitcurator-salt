@@ -1,11 +1,13 @@
-{% if grains['oscodename'] != 'noble' %}
+{% set codename = grains['oscodename'] %}
 
+{% set libappindicator1_pkgs = {
+     'jammy':    ['libappindicator1'],
+     'noble':    [],
+     'resolute': [],
+   }.get(codename, []) %}
+
+{% if libappindicator1_pkgs %}
 libappindicator1:
-  pkg.installed
-
-{% else %}
-
-libappindicator1 is not available in Noble:
-  test.nop
-
+  pkg.installed:
+    - pkgs: {{ libappindicator1_pkgs }}
 {% endif %}

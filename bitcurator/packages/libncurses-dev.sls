@@ -1,14 +1,11 @@
-{% if grains['oscodename'] != 'noble' %}
+{% set codename = grains['oscodename'] %}
 
-libncurses5-dev:
-  pkg.installed
+{% set pkg_map = {
+     'jammy':    ['libncurses5-dev', 'libncursesw5-dev'],
+     'noble':    ['libncurses-dev'],
+     'resolute': ['libncurses-dev'],
+   } %}
 
-libncursesw5-dev:
-  pkg.installed
-
-{% else %}
-
-libncurses-dev:
-  pkg.installed
-
-{% endif %}
+libncurses-dev-pkgs:
+  pkg.installed:
+    - pkgs: {{ pkg_map.get(codename, ['libncurses-dev']) }}

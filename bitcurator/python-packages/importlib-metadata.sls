@@ -1,5 +1,12 @@
-{% if grains['oscodename'] != 'noble' %}
+{% set codename = grains['oscodename'] %}
 
+{% set install_importlib_metadata = {
+     'jammy':    True,
+     'noble':    False,
+     'resolute': False,
+   }.get(codename, False) %}
+
+{% if install_importlib_metadata %}
 include:
   - bitcurator.python-packages.pip
 
@@ -10,8 +17,4 @@ importlib_metadata:
     - upgrade: True
     - require:
       - sls: bitcurator.python-packages.pip
-
-{% else %}
-Importlib-metadata installation via pip not required for Noble:
-  test.nop
 {% endif %}

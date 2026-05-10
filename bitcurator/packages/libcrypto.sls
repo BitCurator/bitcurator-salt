@@ -1,16 +1,11 @@
-{% if grains['oscodename'] == 'jammy' %}
+{% set codename = grains['oscodename'] %}
 
-libcrypto++8:
-  pkg.installed
+{% set libcrypto_pkgs = {
+     'jammy':    ['libcrypto++8'],
+     'noble':    ['libcrypto++8t64'],
+     'resolute': ['libcrypto++8t64'],
+   }.get(codename, ['libcrypto++8t64']) %}
 
-{% elif grains['oscodename'] == 'noble' %}
-
-libcrypto++8t64:
-  pkg.installed
-
-{% else %}
-
-libcrypto++8t64:
-  pkg.installed
-
-{% endif %}
+libcrypto-packages:
+  pkg.installed:
+    - pkgs: {{ libcrypto_pkgs }}

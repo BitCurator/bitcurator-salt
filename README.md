@@ -7,9 +7,9 @@
 
 Configuration and support files to build the BitCurator environment in a Ubuntu LTS release. BitCurator provides a dedicated installer and uses [Salt](https://saltproject.io/) automation to create a custom desktop environment that includes archival processing, metadata management, forensic analysis, and security tools.
 
-Instructions in the next section provide guidance on installing Ubuntu and using command-line tools to deploy BitCurator. If you are unfamiliar with commnad-line tools or need additional help installing Ubuntu on dedicated hardware or as a virtual machine, visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases and click on the link to the Quick Start Guide.
+Instructions in the next section provide guidance on installing Ubuntu and using command-line tools to deploy BitCurator. If you are unfamiliar with command-line tools or need additional help installing Ubuntu on dedicated hardware or as a virtual machine, visit https://github.com/BitCurator/bitcurator-distro/wiki/Releases and click on the link to the Quick Start Guide.
 
-**Note: BitCurator must be deployed on an x86/amd64 version of Ubuntu. Currently, Ubuntu cannot be installed as the host OS or in a VM on systems with ARM processors, including Apple silicon (M1-M4 series).**
+**Note: BitCurator's toolchain requires an x86/amd64 architecture. It cannot be deployed on ARM-based systems, including Apple silicon (M1–M5), even via virtualization.**
 
 If you wish to build the environment from scratch on your own physical host or VM, follow the instructions below. An internet connection is **required** during installation.
 
@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install gnupg curl git -y
 ```
 
-`gnupg` is required for the BitCurator installer to validate the signature of the BitCurrator configuration files during install.
+`gnupg` is required for the BitCurator installer to validate the signature of the BitCurator configuration files during install.
 `curl` can be used when developing or testing state files.
 `git` is used to clone local GitHub repos, and can be used when testing state files from the [BitCurator SaltStack Repo](https://github.com/bitcurator/bitcurator-salt).
 
@@ -73,7 +73,7 @@ sudo bitcurator install
 
 If no errors have occurred, move on to step 5 below. If you see a message that includes "Incomplete due to failures", one or more packages may have failed to install. This message is usually the result of an install failure for a single tool (or small subset of tools), and the BitCurator environment will still be usable after reboot. To identify the problem and report it, follow the steps in "What to do if you encounter an error" below.
 
-**5. Reboot**
+**4. Reboot**
 
 When the installation is complete, reboot your system from the terminal:
 
@@ -129,7 +129,7 @@ Options:
   --dev                 Developer Mode (do not use, dangerous, bypasses checks)
   --version=<version>   Specific version install [default: latest]
   --mode=<mode>         bitcurator installation mode (dedicated or addon, default: dedicated)
-  --user=<user>         User used for bitcurator configuration [default: kamwoods]
+  --user=<user>         User used for bitcurator configuration [default: bcadmin]
   --no-cache            Ignore the cache, always download the release files
   --verbose             Display verbose logging
 ```

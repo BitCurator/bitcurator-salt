@@ -1,11 +1,13 @@
-{% if grains['oscodename'] != 'noble' %}
+{% set codename = grains['oscodename'] %}
 
+{% set audio_convert_pkgs = {
+     'jammy':    ['nautilus-script-audio-convert'],
+     'noble':    [],
+     'resolute': [],
+   }.get(codename, []) %}
+
+{% if audio_convert_pkgs %}
 nautilus-script-audio-convert:
-  pkg.installed
-
-{% else %}
-nautilus-script-audio-convert-not-available-in-noble:
-  test.nop
-
+  pkg.installed:
+    - pkgs: {{ audio_convert_pkgs }}
 {% endif %}
-

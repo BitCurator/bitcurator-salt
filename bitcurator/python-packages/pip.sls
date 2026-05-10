@@ -1,5 +1,12 @@
-{% if grains['oscodename'] != 'noble' %}
+{% set codename = grains['oscodename'] %}
 
+{% set install_pip_via_pip = {
+     'jammy':    True,
+     'noble':    False,
+     'resolute': False,
+   }.get(codename, False) %}
+
+{% if install_pip_via_pip %}
 include:
   - bitcurator.packages.python3-pip
 
@@ -10,9 +17,4 @@ bitcurator-python-packages-pip3:
     - upgrade: True
     - require:
       - sls: bitcurator.packages.python3-pip
-
-{% else %}
-Pip installation via pip not required for Noble:
-  test.nop
-
 {% endif %}
