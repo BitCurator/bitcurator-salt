@@ -10,4 +10,7 @@
 libvte-common-packages:
   pkg.installed:
     - pkgs: {{ libvte_common_pkgs }}
+{% else %}
+libvte-common-packages:
+  test.nop: []
 {% endif %}

@@ -10,4 +10,7 @@
 nautilus-script-audio-convert:
   pkg.installed:
     - pkgs: {{ audio_convert_pkgs }}
+{% else %}
+nautilus-script-audio-convert:
+  test.nop: []
 {% endif %}

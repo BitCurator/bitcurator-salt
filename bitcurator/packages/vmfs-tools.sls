@@ -10,4 +10,7 @@
 vmfs-packages:
   pkg.installed:
     - pkgs: {{ vmfs_pkgs }}
+{% else %}
+vmfs-packages:
+  test.nop: []
 {% endif %}

@@ -17,4 +17,7 @@ bitcurator-python-packages-pip3:
     - upgrade: True
     - require:
       - sls: bitcurator.packages.python3-pip
+{% else %}
+bitcurator-python-packages-pip3:
+  test.nop: []
 {% endif %}

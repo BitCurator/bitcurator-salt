@@ -17,4 +17,7 @@ wheel:
     - upgrade: True
     - require:
       - sls: bitcurator.python-packages.pip
+{% else %}
+wheel:
+  test.nop: []
 {% endif %}

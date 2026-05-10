@@ -17,4 +17,7 @@ setuptools:
     - upgrade: True
     - require:
       - sls: bitcurator.python-packages.pip
+{% else %}
+setuptools:
+  test.nop: []
 {% endif %}

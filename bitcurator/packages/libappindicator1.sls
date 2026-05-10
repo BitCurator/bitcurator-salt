@@ -10,4 +10,7 @@
 libappindicator1:
   pkg.installed:
     - pkgs: {{ libappindicator1_pkgs }}
+{% else %}
+libappindicator1:
+  test.nop: []
 {% endif %}

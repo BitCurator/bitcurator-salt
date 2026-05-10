@@ -10,4 +10,7 @@
 libvte9-packages:
   pkg.installed:
     - pkgs: {{ libvte9_pkgs }}
+{% else %}
+libvte9-packages:
+  test.nop: []
 {% endif %}

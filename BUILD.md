@@ -68,8 +68,10 @@ Run the following command to install the Salt Project repository:
 ```shell
 # Ensure keyrings dir exists
 mkdir -p /etc/apt/keyrings
+
 # Download public key
-curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | gpg --dearmor | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp > /dev/null
+
 # Create apt repo target configuration
 curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
 ```

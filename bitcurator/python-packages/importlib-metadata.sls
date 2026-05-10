@@ -17,4 +17,7 @@ importlib_metadata:
     - upgrade: True
     - require:
       - sls: bitcurator.python-packages.pip
+{% else %}
+importlib_metadata:
+  test.nop: []
 {% endif %}
