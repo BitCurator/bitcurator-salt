@@ -17,7 +17,7 @@ docker:
   pkgrepo.managed:
     - humanname: Docker
     - name: deb [arch=amd64 signed-by=/usr/share/keyrings/docker.pgp] https://download.docker.com/linux/ubuntu {{ docker_codename }} stable
-    - file: /etc/apt/sources.list.d/docker.list
+    - file: /etc/apt/sources.list.d/docker.sources
     - refresh: True
     - aptkey: False
     - clean_file: True

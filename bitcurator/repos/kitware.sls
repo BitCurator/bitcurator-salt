@@ -14,7 +14,7 @@ bitcurator-kitware-repo:
   pkgrepo.managed:
     - humanname: Kitware
     - name: deb [signed-by=/usr/share/keyrings/KITWARE-PGP-KEY.asc arch=amd64] https://apt.kitware.com/ubuntu/ {{ codename }} main
-    - file: /etc/apt/sources.list.d/kitware.list
+    - file: /etc/apt/sources.list.d/kitware.sources
     - aptkey: False
     - clean_file: True
     - refresh: True
