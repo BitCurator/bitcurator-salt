@@ -1,4 +1,9 @@
+{% set codename = grains['oscodename'] %}
+
 bitcurator-universe-repo:
   pkgrepo.managed:
-    - name: deb http://archive.ubuntu.com/ubuntu/ {{ grains['lsb_distrib_codename'] }} universe
-    - refresh_db: true
+    - name: deb [signed-by=/usr/share/keyrings/ubuntu-archive-keyring.gpg] http://archive.ubuntu.com/ubuntu/ {{ codename }} universe
+    - file: /etc/apt/sources.list.d/bitcurator-universe.list
+    - aptkey: False
+    - clean_file: True
+    - refresh_db: True
