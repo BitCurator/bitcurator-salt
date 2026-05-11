@@ -25,15 +25,16 @@ openjdk-repo-file-delete-sources:
 
 adoptium-repo-key:
   file.managed:
-    - name: /usr/share/keyrings/adoptium.pgp
+    - name: /etc/apt/keyrings/adoptium.asc
     - source: https://packages.adoptium.net/artifactory/api/gpg/key/public
     - skip_verify: True
     - makedirs: True
+    - mode: 644
 
 adoptium-repo:
   pkgrepo.managed:
     - humanname: Adoptium
-    - name: deb [arch=amd64 signed-by=/usr/share/keyrings/adoptium.pgp] https://packages.adoptium.net/artifactory/deb {{ adoptium_codename }} main
+    - name: deb [arch=amd64 signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb {{ adoptium_codename }} main
     - file: /etc/apt/sources.list.d/adoptium.sources
     - refresh: True
     - aptkey: False
