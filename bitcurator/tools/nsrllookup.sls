@@ -1,4 +1,5 @@
 {% set hash = 'bdc17e38880f909eeaec60804db2276761c309279735eb42c781f6757edd4061' %}
+{% set codename = grains['oscodename'] %}
 
 include:
   - bitcurator.packages.build-essential
@@ -22,6 +23,31 @@ nsrllookup-extract:
     - enforce_toplevel: False
     - require:
       - file: nsrllookup-source
+
+{% if codename == 'resolute' %}
+# Boost 1.89+ removed the Boost.System stub library; it's now header-only
+# and must not appear in find_package COMPONENTS or target_link_libraries.
+# See https://github.com/boostorg/system/issues/132
+nsrllookup-patch-boost-system:
+  file.replace:
+    - name: /tmp/nsrllookup-1.4.2/CMakeLists.txt
+    - pattern: 'COMPONENTS program_options system'
+    - repl: 'COMPONENTS program_options'
+    - require:
+      - archive: nsrllookup-extract
+    - require_in:
+      - cmd: nsrllookup-build
+
+nsrllookup-patch-boost-system-link:
+  file.replace:
+    - name: /tmp/nsrllookup-1.4.2/CMakeLists.txt
+    - pattern: 'Boost::program_options Boost::system'
+    - repl: 'Boost::program_options'
+    - require:
+      - archive: nsrllookup-extract
+    - require_in:
+      - cmd: nsrllookup-build
+{% endif %}
 
 nsrllookup-build:
   cmd.run:
