@@ -1,33 +1,34 @@
 {% set codename = grains['oscodename'] %}
 
-{% set needs_ubuntu_sources = {
-     'jammy':    False,
-     'noble':    True,
-     'resolute': True,
-   }.get(codename, True) %}
-
-# On noble (24.04) and later, the canonical Ubuntu apt sources live in
-# /etc/apt/sources.list.d/ubuntu.sources (deb822 format), and Ubuntu's
-# software-properties-common has been observed to truncate that file
-# during the highstate on resolute, removing the archive.ubuntu.com
-# stanza and leaving apt without coverage of main/restricted. We write
-# the canonical content explicitly so that any damage is repaired on
-# the next salt run.
+# BitCurator manages Ubuntu's apt source configuration via the
+# canonical deb822 location at /etc/apt/sources.list.d/ubuntu.sources
+# on every supported release.
 #
-# On jammy (22.04), the canonical sources are still in
-# /etc/apt/sources.list, and ubuntu.sources is unused by default.
-# Writing ubuntu.sources on jammy creates duplicate-target warnings on
-# apt update because the same components are then configured in both
-# files. The bitcurator-ubuntu-base-sources state is therefore a
-# test.nop on jammy.
+# On noble (24.04) and resolute (26.04), this is already the Ubuntu
+# default, so we're just ensuring the file exists with the correct
+# contents (and defending against software-properties-common's
+# observed habit of truncating ubuntu.sources on resolute).
 #
-# The global archive.ubuntu.com mirror is used on noble/resolute
-# rather than a geographic one (e.g. us.archive.ubuntu.com). Users who
-# prefer a closer mirror can edit ubuntu.sources manually post-install;
-# salt will overwrite the change on next run, so the edit needs to be
-# carried into this file if persistence is wanted.
+# On jammy (22.04), Ubuntu still uses the legacy /etc/apt/sources.list
+# by default. We rename it to /etc/apt/sources.list.legacy and write
+# ubuntu.sources, bringing jammy systems in line with the noble+
+# layout. The user's original sources.list is preserved at .legacy
+# for inspection or recovery. The rename state's onlyif check makes
+# this idempotent: it fires only when sources.list has at least one
+# active deb line, so subsequent salt runs (and runs on noble or
+# resolute where sources.list has no active sources) are no-ops.
+#
+# The global archive.ubuntu.com mirror is used rather than a
+# geographic one (e.g. us.archive.ubuntu.com); users who prefer a
+# closer mirror can edit ubuntu.sources manually post-install, with
+# the understanding that salt will overwrite on next run unless this
+# state file is also updated.
 
-{% if needs_ubuntu_sources %}
+bitcurator-ubuntu-base-legacy-rename:
+  file.rename:
+    - name: /etc/apt/sources.list.legacy
+    - source: /etc/apt/sources.list
+    - onlyif: 'grep -qE "^\s*deb\s" /etc/apt/sources.list'
 
 bitcurator-ubuntu-base-sources:
   file.managed:
@@ -47,19 +48,12 @@ bitcurator-ubuntu-base-sources:
         Suites: {{ codename }}-security
         Components: main restricted universe multiverse
         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+    - require:
+      - file: bitcurator-ubuntu-base-legacy-rename
 
 bitcurator-ubuntu-base-refresh:
   cmd.run:
     - name: apt-get update
     - onchanges:
       - file: bitcurator-ubuntu-base-sources
-
-{% else %}
-
-# Jammy's canonical sources live in /etc/apt/sources.list. Don't touch
-# it - the installer-provided file is correct, and writing
-# ubuntu.sources here would create duplicate entries and apt warnings.
-bitcurator-ubuntu-base-sources:
-  test.nop: []
-
-{% endif %}
+      - file: bitcurator-ubuntu-base-legacy-rename
