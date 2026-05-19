@@ -7,7 +7,7 @@ Name=lightgrep
 GenericName=ForensicTool
 Comment=lightgrep
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-lightgrep.sh
 Categories=Forensics and Reporting
 

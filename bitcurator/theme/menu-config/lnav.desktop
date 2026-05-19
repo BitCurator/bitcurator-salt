@@ -7,7 +7,7 @@ Name=lnav
 GenericName=ForensicTool
 Comment=Logfile Navigator
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-lnav.sh
 Categories=Additional Tools
 

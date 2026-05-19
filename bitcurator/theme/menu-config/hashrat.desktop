@@ -7,6 +7,6 @@ Name=Hashrat
 GenericName=ForensicTool
 Comment=Hashing tool for directories and files
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-hashrat.sh
 Categories=Additional Tools

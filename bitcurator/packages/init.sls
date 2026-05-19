@@ -40,7 +40,6 @@ include:
   - bitcurator.packages.grsync
   - bitcurator.packages.gtkhash
   - bitcurator.packages.guymager
-  - bitcurator.packages.hardinfo
   - bitcurator.packages.hashdeep
   - bitcurator.packages.hashrat
   - bitcurator.packages.hdparm
@@ -191,7 +190,6 @@ bitcurator-packages:
       - sls: bitcurator.packages.grsync
       - sls: bitcurator.packages.gtkhash
       - sls: bitcurator.packages.guymager
-      - sls: bitcurator.packages.hardinfo
       - sls: bitcurator.packages.hashdeep
       - sls: bitcurator.packages.hashrat
       - sls: bitcurator.packages.hdparm

@@ -7,6 +7,6 @@ Name=ddrescue (command line)
 GenericName=ImagingTool
 Comment=ddrescue command-line tool
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-ddrescue.sh
 Categories=Imaging and Recovery

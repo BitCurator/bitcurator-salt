@@ -7,6 +7,6 @@ Name=DiskType
 GenericName=ForensicTool
 Comment=disktype command-line tool
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-disktype.sh
 Categories=Forensics and Reporting

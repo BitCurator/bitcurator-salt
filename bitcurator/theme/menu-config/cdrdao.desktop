@@ -7,6 +7,6 @@ Name=cdrdao (command line)
 GenericName=ImagingTool
 Comment=cdrdao command-line tool
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-cdrdao.sh
 Categories=Imaging and Recovery

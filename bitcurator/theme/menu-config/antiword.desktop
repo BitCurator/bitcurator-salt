@@ -7,6 +7,6 @@ Name=Antiword (legacy Word to TXT and PDF)
 GenericName=ForensicTool
 Comment=antiword command-line tool
 Terminal=true
-Icon=/usr/share/icons/Humanity/apps/128/terminal.svg
+Icon=utilities-terminal
 Exec=run-antiword.sh
 Categories=Additional Tools
