@@ -14,6 +14,7 @@ include:
   - bitcurator.packages.clamtk
   - bitcurator.packages.clonezilla
   - bitcurator.packages.cmake
+  - bitcurator.packages.cpmtools
   - bitcurator.packages.cryptsetup
   - bitcurator.packages.curl
   - bitcurator.packages.dbus-x11
@@ -165,6 +166,7 @@ bitcurator-packages:
       - sls: bitcurator.packages.clamtk
       - sls: bitcurator.packages.clonezilla
       - sls: bitcurator.packages.cmake
+      - sls: bitcurator.packages.cpmtools
       - sls: bitcurator.packages.cryptsetup
       - sls: bitcurator.packages.curl
       - sls: bitcurator.packages.dbus-x11

@@ -1,0 +1,2 @@
+cpmtools:
+  pkg.installed
